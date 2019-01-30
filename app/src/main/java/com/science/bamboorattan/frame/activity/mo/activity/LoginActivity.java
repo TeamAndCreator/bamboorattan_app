@@ -77,8 +77,8 @@ public class LoginActivity extends ABaseActivity {
             return;
         }
         Map<String, String> params = new HashMap<>();
-        params.put("userAcct", username);
-        params.put("userPwd", password);
+        params.put("userName", username);
+        params.put("password", password);
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.POST)
@@ -99,7 +99,7 @@ public class LoginActivity extends ABaseActivity {
         if (bean == null) {
             return;
         }
-        if (bean.getStatusCode() == 200) {
+        if (bean.getStatusCode() == 0) {
             PreferencesUtils.putBoolean(this, GlobalConstants.SP_USER_LOGGED_ON,
                     true);
             PreferencesUtils.putString(this, GlobalConstants.SP_USER_NAME, mUserName);

@@ -12,7 +12,7 @@ public class GlobalConstants {
     /***
      * 接口
      */
-    private static final String SERVER_IP = "http://47.104.26.79:8081";
+    private static final String SERVER_IP = "http://47.106.74.107:8081";
 
     /**
      * 登录
