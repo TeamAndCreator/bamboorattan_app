@@ -1,0 +1,310 @@
+<resources>
+    <string name="app_name">竹藤数据采集</string>
+    <string name="timer_seconds">跳过&#160;%1$ds</string>
+    <string name="home">首页</string>
+    <string name="device">设备</string>
+    <string name="discovery">发现</string>
+    <string name="task">任务</string>
+    <string name="wifi_ssid">AYB-100151</string>
+    <string name="attached">已绑定</string>
+    <string name="bg_proc">开启后台进程</string>
+    <string name="download_hint">安逸宝正在下载</string>
+    <string name="IEBox">IeBox</string>
+
+    <string name="bat_power">电量：%1$d</string>
+    <string name="con_count">连接数：%1$d</string>
+    <string name="signal_intensity">信号强度：%1$d</string>
+    <string name="signal_type">信号类型：%1$s</string>
+    <string name="net_speed">网速：%1$s</string>
+    <string name="dev_name">设备名称：%1$s</string>
+    <string name="info_date">时间：</string>
+    <string name="user_name_hint">请输入手机号</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="register_hint">注册</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="get_verify_code">获取验证码</string>
+    <string name="social_account_login">社交账号登录</string>
+
+    <!--我的-->
+    <string name="about_me">个人中心</string>
+    <string name="my_balance">我的流量</string>
+    <string name="data_flow_shop">流量商城</string>
+    <string name="data_flow_chart">流量报表</string>
+    <string name="recharge_record">充值记录</string>
+    <string name="invite_friends">邀请好友</string>
+    <string name="help_center">使用帮助</string>
+    <string name="ok">确定</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="profile_qr_hint">用云逸宝扫二维码，租赁设备</string>
+    <string name="go_to_app">点击进入</string>
+    <string name="qr_code_of_mine">我的二维码</string>
+    <string name="from_album">从相册选择</string>
+    <string name="photo">拍照</string>
+    <string name="permission_camera_hint">在设置-应用-云逸宝-权限中开启相机权限，读写手机存储权限，以正常使用拍照功能和上传头像的功能</string>
+    <string name="permission_location_hint">在设置-应用-云逸宝-权限中开启位置信息权限，以正常使用获取附近WIFI热点信息和定位功能</string>
+    <string name="permission_scan_hint">在设置-应用-云逸宝-权限中开启相机权限，以正常使用扫一扫功能</string>
+    <string name="go_to_config">去设置</string>
+    <string name="whether_to_connect">是否连接到%1$s?</string>
+
+    <!--Toolbar Title-->
+    <string name="data_flow_charge">流量充值</string>
+    <string name="me">我的</string>
+    <string name="message_of_mine">我的消息</string>
+    <string name="pay_succeed">支付成功</string>
+    <string name="common_questions">常见问题</string>
+    <string name="message_details">消息详情</string>
+    <string name="recharge_record_details">订单详情</string>
+    <string name="feedback">反馈</string>
+    <string name="settings">设置</string>
+    <string name="reset_pwd">设置新密码</string>
+    <string name="register_by_phone">手机注册</string>
+    <string name="set_login_pwd">设置登录密码</string>
+    <string name="pay">支付</string>
+    <string name="service_location">设备服务点</string>
+    <string name="transfer_record">转赠记录</string>
+    <string name="transfer_record_details">转赠记录详情</string>
+    <string name="summary">简介：</string>
+    <string name="exchange_process">兑换方法：</string>
+
+    <!--user register-->
+    <string name="phone_num_input_hint">请填写注册手机号</string>
+    <string name="phone_num_text_hint">我们将发送验证码到您的手机</string>
+    <string name="next_step">下一步</string>
+    <string name="identifying_code_text_hint">验证码：</string>
+    <string name="identifying_code_input_hint">请输入验证码</string>
+    <string name="set_pwd">设置密码：</string>
+    <string name="confirm_pwd">确认密码：</string>
+    <string name="set_pwd_input_hint">6&#8211;16位字母、数字组合</string>
+    <string name="confirm_pwd_input_hint">确认密码</string>
+    <string name="re_get_after_60s">&#160;%1$ds后重新获取</string>
+
+    <!--retrieve password-->
+    <string name="retrieve_input_hint">请输入手机号</string>
+
+    <!--reset password-->
+    <string name="new_pwd_hint">新密码，6&#8211;16位字母、数字组合</string>
+    <string name="submit">确认提交</string>
+    <string name="bind_the_phone">绑定手机</string>
+
+    <!--messages details-->
+    <!--settings-->
+    <string name="logout">退出登录</string>
+    <string name="not_login">未登录</string>
+    <string name="logout_prompt">确认要退出登录么？</string>
+
+    <!--radar-->
+    <string name="call_the_seller">呼叫商家</string>
+    <string name="radar">附近商家</string>
+    <string name="shop">店铺名称</string>
+    <string name="contact">联系方式</string>
+    <!--task-->
+    <string name="sign_in">签到领积分</string>
+    <string name="limited_exchange">限量兑换</string>
+    <string name="donate_data">转赠流量</string>
+    <string name="lease_zone">租赁用户专区</string>
+    <string name="normal_zone">普通用户专区</string>
+    <string name="convertible_of">可兑换%1$s流量</string>
+    <string name="points">%1$s积分</string>
+    <!--modify self info-->
+    <string name="save">保存</string>
+    <!--question details-->
+    <string name="question_details">问题详情</string>
+
+    <!--feedback-->
+    <string name="feedback_hint">请详细描述您的问题或建议，我们将及时解决</string>
+    <string name="submit_feedback">提交</string>
+
+    <!--recharge record details-->
+    <string name="pay_success">交易成功</string>
+
+    <!--payment result-->
+    <string name="payment_suceess">恭喜，流量购买成功！</string>
+    <string name="purchase_amount">充值量：</string>
+    <string name="period_of_validity">有效期：</string>
+    <string name="fee">费用：</string>
+    <string name="back_to_main">返回首页</string>
+    <string name="goto_recharge_record">进入充值记录</string>
+
+    <!--home-->
+    <string name="disconnected">未连接</string>
+    <string name="power_of_battery">设备电量</string>
+    <string name="leasing_equipment">租赁设备</string>
+    <string name="device_details">设备详情</string>
+    <string name="no_authenticate_device_hint">您没有授权任何设备，请先授权设备再连接</string>
+    <string name="refuse_to_auth">拒绝</string>
+    <string name="agree_to_auth">授权</string>
+    <string name="copy_password">复制密码</string>
+    <string name="surplus_amount">剩余：%1$s</string>
+    <string name="message">消息</string>
+    <string name="no_available_wifi">附近暂无可用WIFI</string>
+    <string name="new_version_update_hint">检测到新版本，是否更新？</string>
+    <string name="refuse_to_update">暂不更新</string>
+    <string name="agree_to_update">立即更新</string>
+
+    <!--pay page-->
+    <string name="order_details">订单详情</string>
+    <string name="pay_amount">支付金额：%1$s</string>
+    <string name="charge_amount">充值流量：%1$s</string>
+    <string name="valid_period">有效期限：%1$s</string>
+    <string name="pay_mode">支付方式</string>
+    <string name="pay_by_ali_pay">支付宝支付</string>
+    <string name="pay_by_wx">微信支付</string>
+    <string name="confirm_to_pay">确认支付</string>
+
+    <!--connected devices-->
+    <string name="connected_devices">设备连接数</string>
+
+    <!--recharge page-->
+    <string name="confirm_to_recharge">确认充值</string>
+    <string name="recharge_nick_name">昵称：%1$s</string>
+    <string name="data_available">当前剩余流量：%1$s</string>
+
+    <!--connected device list-->
+    <string name="init_data_flow">0M</string>
+
+    <!--RdoCash ratio-->
+    <string name="ratio_day_chart">转化率日报表</string>
+    <string name="rdo_cash_of_zm">掌盟代计费</string>
+    <string name="description">描述</string>
+    <string name="count">数量</string>
+    <string name="percent">占比</string>
+    <string name="total">合计</string>
+    <string name="search">查询</string>
+    <string name="start_time">起始时间：</string>
+    <string name="end_time">截止时间：</string>
+    <string name="channel">渠道:</string>
+    <string name="customer">公司：</string>
+    <string name="client_id">客户端编号：</string>
+    <string name="client_id_hint">请输入客户端编号</string>
+    <string name="type_of_service">业务类型：</string>
+    <string name="loading">正在加载中，请稍后&#8230;</string>
+    <string name="all_channel">全部</string>
+    <string name="AEE_channel">AEE</string>
+    <string name="except_AEE_channel">非AEE</string>
+
+    <!--invite friends-->
+    <string name="share_to">分享到</string>
+    <string name="share_account">您已成功邀请%1$s人</string>
+    <string name="add_table">增加%1$s表</string>
+    <string name="remind_words">邀请成功即送%1$s积分，上不封顶哦！</string>
+
+    <!--my credit-->
+    <string name="my_points">我的积分</string>
+    <!--connected devices-->
+    <string name="connected_devices_hint">有%1$d台设备接入当前WIFI</string>
+    <string name="menu_hint">去和心仪的人打个招呼吧，用红包打招呼收到回应的机会会更上一层楼哦~~</string>
+    <string name="say_hi">打招呼</string>
+    <string name="bribery_money">发流量红包</string>
+    <string name="cancel">取消</string>
+    <!--Authorization device-->
+    <string name="authorization_device">授权设备</string>
+    <string name="add_authorization_device">添加授权设备</string>
+    <string name="unbind_auth_device">解除授权</string>
+    <!--say hi-->
+    <string name="say_hi_hint">说句话打个招呼（50字以内）</string>
+    <string name="send_hi">发送</string>
+    <!--bribery money-->
+    <string name="user_name">用户名：</string>
+    <string name="data_flow">流量：</string>
+    <string name="remark">添加备注（30字以内）</string>
+    <string name="confirm_to_gift">确认</string>
+    <string name="gift_data">发流量红包</string>
+    <string name="gift_history">转赠记录</string>
+    <string name="data_amount_hint">请输入转赠的流量（10M的倍数，仅限月包）</string>
+    <!--QR scan-->
+    <string name="invite_code_hint">您的邀请码为：</string>
+
+    <!--about us-->
+    <string name="about_us">关于云逸宝</string>
+    <!--account manage-->
+    <string name="account_binding">账号绑定</string>
+    <string name="account_management">账号管理</string>
+    <!--系统赠送记录-->
+    <string name="system_gift_record">系统赠送记录</string>
+    <!--system record details-->
+    <string name="record_details">记录详情</string>
+    <string name="system_gift">系统赠送</string>
+    <string name="expires">截止日期</string>
+    <string name="gift_time">赠送时间</string>
+    <!--merchat privilege-->
+    <string name="merchat_privilege">商家特权</string>
+    <string name="confirm_to_return">确认归还</string>
+    <!--add auth device-->
+    <string name="add_auth_device">添加授权设备</string>
+    <string name="mac_address">Mac地址：</string>
+    <string name="mac_address_hint">请输入要授权设备的Mac地址</string>
+    <string name="mobile">手机</string>
+    <string name="pad">Pad</string>
+    <string name="computer">电脑</string>
+    <string name="others">其他</string>
+    <string name="questions">如何查看Mac地址</string>
+    <string name="introduction">请添加正确的授权设备的MAC地址以及正确的设备类型，否则将造成您的设备无法正常上网</string>
+
+    <!--红包领取页面-->
+    <string name="red_envelope">红包</string>
+    <string name="congratulations">恭喜获得流量红包一个！</string>
+    <string name="unfold_it">拆开它</string>
+    <string name="fried_name">%1$s的红包</string>
+    <string name="already_saved">已存入余量</string>
+    <string name="go_to_account">查看我的流量</string>
+    <!--使用帮助-->
+    <string name="first_step">第一步：获取上网密码</string>
+    <string name="first_to_do">开启网络，点击相应的WIFI获取上网密码，获取密码前，请确保已绑定上网设备（手机、Pad、笔记本电脑）的MAC地址</string>
+    <string name="second_step">第二步：去上网</string>
+    <string name="second_to_do">点击“复制密码链接”，在【无线局域网】点击进入相应的WiFi，长按密码框，粘贴密码即可上网</string>
+    <!--输入邀请码弹框-->
+    <string name="get_data">获取流量</string>
+    <string name="invite_code_input_hint">请输入邀请码/兑换码</string>
+    <!--押金退还确认框-->
+    <string name="refund_deposit_hint">本次可退还押金：%1$s</string>
+    <string name="deposit_cancel">再想想</string>
+    <string name="deposit_confirm">退押金</string>
+    <!--账号解绑确认框-->
+    <string name="account_unbunding_hint">是否解除绑定？</string>
+    <string name="sign_title">连续7天签到的奖励</string>
+    <string name="sign_principle">1：连续签到7天，即可额外获得15积分奖励\n2：连续签到记录在第8天开始时将清零重新计算\n3：如果中断签到，连续签到记录也将清零\n4：本活动最终解释权归翰隆所有</string>
+    <string name="got_it">我知道了</string>
+    <string name="mac_address_release_hint">是否解除授权？</string>
+    <string name="device_return_dialog_hint">是否确认用户归还设备</string>
+
+    <!--rented devices-->
+    <string name="rented_devices">我的设备</string>
+    <string name="rented_history">租赁记录</string>
+    <string name="rent_details">租赁详情</string>
+    <string name="reciprocal_account">对方账户</string>
+
+    <!--QR Scan-->
+    <string name="QR_code">二维码</string>
+    <string name="QR_scan_hint">对准二维码，将会自动扫描</string>
+    <!--exchange details-->
+    <string name="exchange">兑换</string>
+    <string name="exchange_details">兑换详情</string>
+    <!--certification-->
+    <string name="mobile_certification">手机验证</string>
+    <string name="user_certification">实名认证</string>
+    <string name="deposit">缴纳押金</string>
+    <string name="finished_notification">完成</string>
+    <string name="name_input_hint">请输入您的姓名</string>
+    <string name="identification_input_hint">请输入身份证号</string>
+    <string name="authentication">实名认证</string>
+    <!--authentication finished-->
+    <string name="authentication_finished_hint">认证成功，赠您1G流量，7天有效</string>
+    <string name="surf_the_internet">去上网</string>
+    <string name="finished">完成</string>
+    <!--device QR code-->
+    <string name="scan_result">扫码结果</string>
+    <string name="device_no">设备编号</string>
+    <!--Flow Account-->
+
+    <!--查看Mac地址帮助-->
+    <string name="check_mac_address">查看Mac地址</string>
+    <string name="question_zero">1：如何获取本机的Mac地址？</string>
+    <string name="answer_zero">点击复制本机Mac地址</string>
+    <string name="question_one">2：如何查看电脑的Mac地址？</string>
+    <string name="answer_one">以Windows 7为例，点击“开始”菜单，在“搜索程序和文件”输入框，输入“cmd”（会找到进入dos命令的cmd程序)，然后点击回车，弹出命令符窗口，输入“ipconfig/all”，然后进行回车，就会看到一连串的返回信息。回车后，弹出命令符窗口，输入“ipconfig/all”，然后进行回车，就会看到一连串的返回信息。在返回信息中，找到“本地连接”其中的物理地址（Physical Address），即为本机的mac地址。</string>
+    <string name="question_two">3：如何查看Pad的Mac地址？</string>
+    <string name="answer_two">选择【设置】-【关于】-【状态信息】-【WLAN MAC地址】即可查看。</string>
+    <string name="progress_on_loading">加载中&#8230;</string>
+</resources>

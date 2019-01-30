@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.castorflex.smoothprogressbar:library-circular-1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-circular-1.0.1.aar/18cfef4b598adf74e71297eecba5ef90/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-circular-1.0.1.aar/18cfef4b598adf74e71297eecba5ef90/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.castorflex.smoothprogressbar/library-circular/1.0.1/2de122e7febf226458ba7f74c0916f2dd37850d/library-circular-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

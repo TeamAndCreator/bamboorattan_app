@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".frame.activity.mo.activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_linear"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"   
+        android:orientation="horizontal">
+</LinearLayout>
+    <RadioGroup
+        android:id="@+id/main_radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+         android:background="#A2CD5A"
+         >
+
+        <RadioButton
+            android:id="@+id/main_rab_house"
+            android:checked="true"
+            android:text="主页"
+            android:textColor="#b5b5b5"
+            style="@style/main_rbt"
+            android:textSize="16sp"
+            />
+
+        <RadioButton
+            android:id="@+id/main_rab_mine"
+            style="@style/main_rbt"
+            android:text="竹藤库"
+            android:textColor="#b5b5b5"
+            android:textSize="16sp"
+            />
+        <RadioButton
+            android:id="@+id/main_rab_certific"
+            style="@style/main_rbt"
+            android:text="个人中心"
+            android:textColor="#b5b5b5"
+            android:textSize="16sp"
+           />
+    </RadioGroup>
+</LinearLayout>

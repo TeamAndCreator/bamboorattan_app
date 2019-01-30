@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'groovy'
+//apply plugin: 'AndResGuard'
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+//        设置第三方maven仓库
+        maven { url "https://jitpack.io" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven {
+            url 'https://dl.bintray.com/cjt/maven'
+        }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.1'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.3'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+//        compile localGroovy()
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        //引入本地aar
+        flatDir {
+            dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+        //设置第三方maven仓库
+        maven { url "https://jitpack.io" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        google()
+    }
+//    设定全局编码方式
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}
+
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
+
+// global variables definition
+ext {
+    compileSdkVersion = 27
+    buildToolsVersion = "27.0.3"
+    minSdkVersion = 16 //如果系统的API级别低于该属性中指定的值，Android系统将阻止用户安装用户。建议始终声明该属性。默认值为1
+    targetSdkVersion = 22 //该属性用于通知系统，您已针对目标版本进行测试，并且系统不应启用任何兼容性行为来保持您的应用与目标版本的向前兼容性。
+//  maxSdkVersion = 24 //在任一情况下，如果应用的maxSdkVersion属性低于系统本身使用的API级别，系统均不允许安装应用。
+    // 在系统更新后重新验证这种情况下，这实际上相当于将您的应用从设备移除，不建议声明该属性。如果未声明，则系统假定应用没有最高API级别
+}

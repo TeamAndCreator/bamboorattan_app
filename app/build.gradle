@@ -1,0 +1,223 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'AndResGuard'
+//定义打包时间方法
+def static releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+//定义versionName
+static String releaseVName() {
+    return "1.0.0"
+}
+
+//定义versionCode
+static int releaseVCode() {
+    return 1
+}
+
+/**
+ * 定义buildHost
+ * @return
+ */
+static String hostName() {
+    return System.getProperty("user.name") + "@" + InetAddress.localHost.hostName
+}
+
+def static gitVersionCode() {
+    def cmd = 'git rev-list HEAD --first-parent --count'
+    cmd.execute().text.trim().toInteger()
+}
+
+def static gitVersionTag() {
+    def cmd = 'git describe --tags'
+    def version = cmd.execute().text.trim()
+
+    def pattern = "-(\\d+)-g"
+    def matcher = version =~ pattern
+
+    if (matcher) {
+        version = version.substring(0, matcher.start()) + "." + matcher[0][1]
+    } else {
+        version = version + ".0"
+    }
+
+    return version
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.science.bamboorattan"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode releaseVCode()
+        versionName releaseVName()
+        resConfigs "zh", "en"
+        multiDexEnabled true //Enable multidex support
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "tencent",
+                                BUGLY_APP_ID       : "900029763",
+                                BUGLY_APP_Version  : releaseVName(),
+                                BUGLY_APP_Channel  : name,
+                                BUGLY_APP_IsDebug  : "false"]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+
+    //是否执行lint检查-若执行lint检查，有任何的错误或者警告提示，都会终止构建。
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+        // 设置为 true时lint将不报告分析的进度
+        quiet true
+        // 如果为 true，则当lint发现错误时停止 gradle构建
+        abortOnError false
+        // 如果为 true，则只报告错误
+        ignoreWarnings true
+        // 如果为 true，则当有错误时会显示文件的全路径或绝对路径 (默认情况下为true)
+        //absolutePaths true
+        // 如果为 true，则检查所有的问题，包括默认不检查问题
+        checkAllWarnings true
+        // 如果为 true，则将所有警告视为错误
+        warningsAsErrors true
+        // 不检查给定的问题id
+        disable 'TypographyFractions', 'TypographyQuotes'
+        // 检查给定的问题 id
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        // * 仅 * 检查给定的问题 id
+        check 'NewApi', 'InlinedApi'
+        // 如果为true，则在错误报告的输出中不包括源代码行
+        noLines true
+        // 如果为 true，则对一个错误的问题显示它所在的所有地方，而不会截短列表，等等。
+        showAll true
+        // 重置 lint 配置（使用默认的严重性等设置）。
+        lintConfig file("default-lint.xml")
+        // 如果为 true，生成一个问题的纯文本报告（默认为false）
+        textReport true
+        // 配置写入输出结果的位置；它可以是一个文件或 “stdout”（标准输出）
+        textOutput 'stdout'
+        // 如果为真，会生成一个XML报告，以给Jenkins之类的使用
+        xmlReport false
+        // 用于写入报告的文件（如果不指定，默认为lint-results.xml）
+        xmlOutput file("lint-report.xml")
+        // 如果为真，会生成一个HTML报告（包括问题的解释，存在此问题的源码，等等）
+        htmlReport true
+        // 写入报告的路径，它是可选的（默认为构建目录下的 lint-results.html ）
+        htmlOutput file("lint-report.html")
+        disable 'TypographyFractions', 'TypographyQuotes'
+    }
+
+
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            jni.srcDirs = ['src/main/jni', 'src/main/jni/']
+        }
+    }
+
+//打包时去掉如下配置文件信息
+    packagingOptions {
+        exclude 'proguard-project.txt'
+        exclude 'project.properties'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    //签名配置
+    signingConfigs {
+
+        debug {
+            storeFile file(RELEASE_STOREFILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+        release {
+            storeFile file(RELEASE_STOREFILE)//KeyStore文件的存放路径，绝对路径或者相对路径
+            storePassword RELEASE_STORE_PASSWORD//KeyStore的密钥库口令
+            keyAlias RELEASE_KEY_ALIAS //KeyStore的别名
+            keyPassword RELEASE_KEY_PASSWORD//KeyStore的密钥口令
+        }
+    }
+
+    /*多渠道打包*/
+    productFlavors {
+
+    }
+    productFlavors.all {
+        flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name,
+                                           BUGLY_APP_ID       : "900029763",
+                                           BUGLY_APP_Version  : releaseVName(),
+                                           BUGLY_APP_Channel  : name,
+                                           BUGLY_APP_isDebug  : "false"]
+
+    }
+
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "API_URL", '"http://47.106.74.107:80"'
+            versionNameSuffix "-debug"
+            minifyEnabled false //是否进行混淆
+            zipAlignEnabled true //Zipalign优化
+            shrinkResources false //是否移除无用的resource文件
+            signingConfig signingConfigs.debug //签名配置
+            jniDebuggable = true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "String", "API_URL", '"http://47.106.74.107:80"'
+            signingConfig signingConfigs.release //签名配置
+            shrinkResources false //是否移除无用的resource文件
+            minifyEnabled false //是否进行混淆
+            zipAlignEnabled true //Zipalign优化
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    return void
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //剔除某个特定的库
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation project(':okhttputils')
+    implementation project(':ultimaterecyclerview')
+    implementation project(':androidbase')
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.chaychan:PowerfulViewLibrary:1.1.0'
+    implementation 'com.github.castorflex.smoothprogressbar:library:1.0.1-SNAPSHOT@aar'
+    implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.0.1'
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'cjt.library.wheel:camera:1.1.9'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+}
