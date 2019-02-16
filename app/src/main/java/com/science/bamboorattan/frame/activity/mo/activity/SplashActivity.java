@@ -62,7 +62,7 @@ public class SplashActivity extends ABaseActivity {
         if (bean == null) {
             return;
         }
-        if (bean.getStatusCode() == 200) {
+        if (bean.getCode() == 200) {
             PreferencesUtils.putBoolean(this, GlobalConstants.SP_USER_LOGGED_ON,
                     true);
             startFirstActivity(MainActivity.class);
@@ -71,8 +71,8 @@ public class SplashActivity extends ABaseActivity {
 
     private void doLogin(String username, String password) {
         Map<String, String> params = new HashMap<>();
-        params.put("userAcct", username);
-        params.put("userPwd", password);
+        params.put("userName", username);
+        params.put("password", password);
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.POST)

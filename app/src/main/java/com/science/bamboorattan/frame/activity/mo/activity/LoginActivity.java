@@ -99,7 +99,7 @@ public class LoginActivity extends ABaseActivity {
         if (bean == null) {
             return;
         }
-        if (bean.getStatusCode() == 0) {
+        if (bean.getCode() == 200) {
             PreferencesUtils.putBoolean(this, GlobalConstants.SP_USER_LOGGED_ON,
                     true);
             PreferencesUtils.putString(this, GlobalConstants.SP_USER_NAME, mUserName);

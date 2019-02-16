@@ -570,15 +570,15 @@ public class RequestBuildUtil {
     /**
      * 20、用户登录
      *
-     * @param userAcct 账号
-     * @param userPwd  密码
+     * @param userName 账号
+     * @param password  密码
      * @return
      */
-    public static Map<String, String> login(String userAcct, String userPwd) {
+    public static Map<String, String> login(String userName, String password) {
 
         Map<String, String> params = new HashMap<>(2);
-        params.put("userAcct", userAcct);
-        params.put("userPwd", userPwd);
+        params.put("userName", userName);
+        params.put("password", password);
         return params;
     }
 

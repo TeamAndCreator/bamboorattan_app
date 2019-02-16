@@ -1,69 +1,41 @@
 package com.science.bamboorattan.frame.activity.mo.bean;
 
-public class ResultBean {
+public class ResultBean<T> {
+    private Integer code;
+    private String msg;
+    private T data;
 
-
-    /**
-     * statusCode : 200
-     * message : 结构性质表增加成功！
-     * navTabId : structureList
-     * forwardUrl : null
-     * callbackType : closeCurrent
-     * rel : null
-     */
-
-    private int statusCode;
-    private String message;
-    private String navTabId;
-    private Object forwardUrl;
-    private String callbackType;
-    private Object rel;
-
-    public int getStatusCode() {
-        return statusCode;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public String getNavTabId() {
-        return navTabId;
+    public T getData() {
+        return data;
     }
 
-    public void setNavTabId(String navTabId) {
-        this.navTabId = navTabId;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public Object getForwardUrl() {
-        return forwardUrl;
-    }
-
-    public void setForwardUrl(Object forwardUrl) {
-        this.forwardUrl = forwardUrl;
-    }
-
-    public String getCallbackType() {
-        return callbackType;
-    }
-
-    public void setCallbackType(String callbackType) {
-        this.callbackType = callbackType;
-    }
-
-    public Object getRel() {
-        return rel;
-    }
-
-    public void setRel(Object rel) {
-        this.rel = rel;
+    @Override
+    public String toString() {
+        return "Result{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
     }
 }
+

@@ -25,15 +25,19 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegisterActivity extends Activity {
     EditText username, name, depatment, phone;
     EditText password;
-    String usename, pass, nam, depatmen, phon;
+    String userAcct, userPwd, userName, orgName, orgPhone;
     private Handler handler = null;
     private Button back;
     private int flag = 0;
     Button register;
+//    List<Integer> idList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +52,11 @@ public class RegisterActivity extends Activity {
                         ().trim().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "用户名或密码不能为空", Toast.LENGTH_LONG).show();
                 } else {
-                    usename = username.getText().toString().trim();
-                    pass = password.getText().toString().trim();
-                    nam = name.getText().toString().trim();
-                    depatmen = depatment.getText().toString().trim();
-                    phon = phone.getText().toString().trim();
+                    userAcct = username.getText().toString().trim();
+                    userPwd = password.getText().toString().trim();
+                    userName = name.getText().toString().trim();
+                    orgName = depatment.getText().toString().trim();
+                    orgPhone = phone.getText().toString().trim();
                     register();
                 }
             }
@@ -84,9 +88,10 @@ public class RegisterActivity extends Activity {
         Thread t = new Thread() {
             @Override
             public void run() {
-                String target = "http://47.106.74.107/bamboorattan/app/anno/doRegister";
+                String target = "http://47.106.74.107:8081/user/save";
                 URL url;
                 try {
+//                    idList.add(1);
                     url = new URL(target);
                     HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
                     urlConn.setRequestMethod("POST");
@@ -99,15 +104,16 @@ public class RegisterActivity extends Activity {
                     DataOutputStream out = new DataOutputStream(
                             urlConn.getOutputStream());
                     String param = "userAcct="
-                            + URLEncoder.encode(usename, "utf-8")
-                            + "&userPwd="
-                            + URLEncoder.encode(pass, "utf-8")
+                            + URLEncoder.encode(userAcct, "utf-8")
                             + "&userName="
-                            + URLEncoder.encode(nam, "utf-8")
+                            + URLEncoder.encode(userName, "utf-8")
+                            + "&userPwd="
+                            + URLEncoder.encode(userPwd, "utf-8")
                             + "&orgName="
-                            + URLEncoder.encode(depatmen, "utf-8")
+                            + URLEncoder.encode(orgName, "utf-8")
                             + "&orgPhone="
-                            + URLEncoder.encode(phon, "utf-8");
+                            + URLEncoder.encode(orgPhone, "utf-8")
+                            + "&idList=1";
                     out.writeBytes(param);
                     out.flush();
                     out.close();
@@ -120,8 +126,8 @@ public class RegisterActivity extends Activity {
                         while ((inputLine = buffer.readLine()) != null) {
                             String result = inputLine + "\n";
                             JSONObject jsonObject1 = new JSONObject(result);
-                            String success2 = jsonObject1.optString("statusCode");
-                            String success = jsonObject1.optString("message");
+                            String success2 = jsonObject1.optString("code");
+                            String success = jsonObject1.optString("msg");
                             if (success2.equals("200")) {
                                 flag = 1;
                                 handler.post(runnableUi);

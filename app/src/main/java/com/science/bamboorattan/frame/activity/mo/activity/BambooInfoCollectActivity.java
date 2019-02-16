@@ -206,11 +206,11 @@ public class BambooInfoCollectActivity extends ABaseActivity {
             if (bean == null) {
                 return;
             }
-            if (bean.getStatusCode() == 200) {
-                ToastUtils.showLongToast(this, bean.getMessage());
+            if (bean.getCode() == 200) {
+                ToastUtils.showLongToast(this, bean.getMsg());
                 finish();
             } else {
-                ToastUtils.showLongToast(this, bean.getMessage());
+                ToastUtils.showLongToast(this, bean.getMsg());
             }
         } catch (Exception e) {
             ToastUtils.showLongToast(this, e.getMessage());

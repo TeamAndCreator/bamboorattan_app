@@ -23,9 +23,9 @@ import com.science.bamboorattan.frame.activity.mo.util.Table;
  *
  */
 public class IndexFragment extends Fragment implements View.OnClickListener {
-    private LinearLayout collect_zhu;
-    private LinearLayout collect_shu;
-    private LinearLayout collect_cai;
+    private LinearLayout collect_bamrattan;
+    private LinearLayout collect_form;
+    private LinearLayout collect_property;
     private Dialog bottomDialog;
     private TextView tvSayHi;
     private TextView tvBriberyMoney;
@@ -40,9 +40,9 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
             savedInstanceState) {
         mContext = getContext();
         View view = inflater.inflate(R.layout.index, null);
-        collect_zhu = view.findViewById(R.id.collect_zhu);
-        collect_cai = view.findViewById(R.id.collect_cai);
-        collect_shu = view.findViewById(R.id.collect_shu);
+        collect_bamrattan = view.findViewById(R.id.collect_bamrattan);
+        collect_form = view.findViewById(R.id.collect_form);
+        collect_property = view.findViewById(R.id.collect_property);
         toolbarTitle = view.findViewById(R.id.toolbar_title);
         toolbar = view.findViewById(R.id.toolbar);
         fakeStatusBar = view.findViewById(R.id.fake_status_bar);
@@ -58,9 +58,9 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initEvent() {
-        collect_cai.setOnClickListener(this);
-        collect_zhu.setOnClickListener(this);
-        collect_shu.setOnClickListener(this);
+        collect_bamrattan.setOnClickListener(this);
+        collect_form.setOnClickListener(this);
+        collect_property.setOnClickListener(this);
 
         tvSayHi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,17 +102,17 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
         int id = v.getId();
         Intent intent;
         switch (id) {
-            case R.id.collect_zhu:
+            case R.id.collect_bamrattan:
                 if (bottomDialog != null) {
                     bottomDialog.show();
                 }
                 break;
-            case R.id.collect_cai:
+            case R.id.collect_form:
                 intent = new Intent(mContext, OptionActivity.class);
                 intent.putExtra("type", 0);
                 startActivity(intent);
                 break;
-            case R.id.collect_shu:
+            case R.id.collect_property:
                 intent = new Intent(getActivity(), OptionActivity.class);
                 intent.putExtra("type", 1);
                 startActivity(intent);
