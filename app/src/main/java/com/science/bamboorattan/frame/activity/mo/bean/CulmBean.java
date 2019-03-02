@@ -8,9 +8,9 @@ import java.io.Serializable;
 public class CulmBean implements Serializable {
 
     private String saveOperateFlag;
-    private String id;
+    private String culmId;
     private String specId;
-    private String leafTopShape;
+    private String culmHeight;
     private String culmDiameter;
     private String culmColor;
     private String culmTop;
@@ -34,11 +34,11 @@ public class CulmBean implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return culmId;
     }
 
     public CulmBean setId(String id) {
-        this.id = id;
+        this.culmId = id;
         return this;
     }
 
@@ -51,12 +51,12 @@ public class CulmBean implements Serializable {
         return this;
     }
 
-    public String getLeafTopShape() {
-        return leafTopShape;
+    public String getCulmHeight() {
+        return culmHeight;
     }
 
-    public CulmBean setLeafTopShape(String leafTopShape) {
-        this.leafTopShape = leafTopShape;
+    public CulmBean setCulmHeight(String culmHeight) {
+        this.culmHeight = culmHeight;
         return this;
     }
 

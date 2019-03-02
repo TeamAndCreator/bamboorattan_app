@@ -30,7 +30,11 @@ public class GlobalConstants {
 
     public static final String USER_REGISTER = SERVER_IP + "/user/save";
 
-    public static final String USER_INFO = SERVER_IP + "/user/findId/{userId}";
+    /**
+     * 用户信息查询
+     */
+
+    public static final String USER_INFO = SERVER_IP + "/user/findByUserName";
 
     /**
      * 获取图形验证码
@@ -132,29 +136,25 @@ public class GlobalConstants {
      * 16、导管形态表添加
      */
 
-    public static final String CATHETER_MORPHOLOGY_ADD = SERVER_IP +
-            "/cathermorphology/save";
+    public static final String CATHETER_MORPHOLOGY_ADD = SERVER_IP + "/cathermorphology/save";
 
     /**
      * 17、维管束形态表添加
      */
 
-    public static final String VASCULAR_BUNDLE_MORPHOLOGY_ADD = SERVER_IP +
-            "/vascularbundelmorphology/save";
+    public static final String VASCULAR_BUNDLE_MORPHOLOGY_ADD = SERVER_IP + "/vascularbundelmorphology/save";
 
     /**
      * 18、组织比量表添加
      */
 
-    public static final String TISSUE_PROPORTION_ADD = SERVER_IP +
-            "/tissueproportion/save";
+    public static final String TISSUE_PROPORTION_ADD = SERVER_IP + "/tissueproportion/save";
 
     /**
      * 19、纤维形态表添加
      */
 
-    public static final String FIBER_MORPHOLOGY_ADD = SERVER_IP +
-            "/fibermorphology/save";
+    public static final String FIBER_MORPHOLOGY_ADD = SERVER_IP + "/fibermorphology/save";
 
     /**
      * 20、属表查询
@@ -173,5 +173,65 @@ public class GlobalConstants {
      * 图片上传
      */
     public static final String IMAGE_ADD = SERVER_IP + "//common/fileUpload";
+    /**
+     * 增加藤属表
+     */
+    public static final String RATTAN_GENUS_ADD = SERVER_IP + "/rattanGenus/save";
+    /**
+     * 增加藤种表
+     */
+    public static final String RATTAN_SPEC_ADD = SERVER_IP + "/rattanSpec/save";
+    /**
+     * 藤结构性质表添加
+     */
+    public static final String T_STRUCTURE_ADD = SERVER_IP + "/tStructure/save";
+    /**
+     * 藤物理性质表添加
+     */
+    public static final String T_PHYSICS_ADD = SERVER_IP + "/tPhysics/save";
+    /**
+     * 藤化学性质表添加
+     */
+    public static final String T_CHEMISTRY_ADD = SERVER_IP + "/tChemistry/save";
+    /**
+     * 藤力学性质表添加
+     */
+    public static final String T_MECHANICS_ADD = SERVER_IP + "/tMechanics/save";
+    /**
+     * 藤导管形态表添加
+     */
+    public static final String T_CATHETER_MORPHOLOGY_ADD = SERVER_IP + "/tCathetermorphology/save";
+    /**
+     * 藤维管束形态表添加
+     */
+    public static final String T_VASCULAR_BUNDLE_MORPHOLOGY_ADD = SERVER_IP + "/tVascularbundelmorphology/save";
+    /**
+     * 藤组织比量表添加
+     */
+    public static final String T_TISSUE_PROPORTION_ADD = SERVER_IP + "/tTissueproportion/save ";
+    /**
+     * 藤纤维形态表添加
+     */
+    public static final String T_FIBER_MORPHOLOGY_ADD = SERVER_IP + "/tFibermorphology/save ";
 
+    /**
+     * 20、藤属表查询
+     */
+    public static final String GET_RATTANGENUS_LIST = SERVER_IP + "/rattanGenus/findAll";
+
+    /**
+     * 21、藤种表查询
+     */
+    public static final String GET_RATTANSPEC_LIST = SERVER_IP + "/rattanSpec/findAll";
+    /**
+     * 图片上传
+     */
+
+    /**
+     * 图片上传
+     */
+
+    /**
+     * 图片上传
+     */
 }

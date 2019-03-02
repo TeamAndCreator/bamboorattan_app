@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: jp.wasabeef:recyclerview-animators-2.2.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-animators-2.2.3.aar/46f6236c8a755d755e8c5a20fcc3b7ed/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-animators-2.2.3.aar/46f6236c8a755d755e8c5a20fcc3b7ed/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-animators-2.2.3.aar/24d81e1ccdb29c26d228ca35c66d0159/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-animators-2.2.3.aar/24d81e1ccdb29c26d228ca35c66d0159/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -5,9 +5,13 @@ public class TableUtil {
     public static String getTableName(Table table) {
         switch (table) {
             case GENUS:
-                return "属";
+                return "竹属";
             case SPEC:
-                return "种";
+                return "竹种";
+            case TGENUS:
+                return "藤属";
+            case TSPEC:
+                return "藤种";
             case CULM:
                 return "竹秆";
             case LEAF:
@@ -41,8 +45,24 @@ public class TableUtil {
             case CATHETERMORPHOLOGY:
                 return "导管形态";
             case VASCULARBUNDLEMORPHOLOGY:
-            default:
                 return "维管束形态";
+            case TPHYSICS:
+                return "藤物理性质";
+            case TCHEMISTRY:
+                return "藤化学性质";
+            case TMECHANICS:
+                return "藤力学性质";
+            case TSTRUCTURE:
+                return "藤结构性质";
+            case TFIBERMORPHOLOGY:
+                return "藤纤维形态";
+            case TTISSUEPROPORTION:
+                return "藤组织比量";
+            case TCATHETERMORPHOLOGY:
+                return "藤导管形态";
+            case TVASCULARBUNDLEMORPHOLOGY:
+            default:
+                return "藤维管束形态";
 
         }
     }

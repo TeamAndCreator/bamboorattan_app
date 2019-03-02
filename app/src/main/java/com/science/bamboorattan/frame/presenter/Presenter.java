@@ -54,7 +54,7 @@ public class Presenter extends PresenterCompat {
         OkHttpUtils
                 .post()
                 .url(task.getUrl())
-                .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                .addHeader("Content-Type", "application/json")
                 .params(task.getParams())
                 .tag(getView())
                 .build()

@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
@@ -35,11 +35,58 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="竹藤信息采集" />
+                android:text="竹-信息采集" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/t_collect_bamrattan"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_collect_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="藤-信息采集" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
             android:id="@+id/collect_form"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_taketo_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="竹-形态信息采集" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/t_collect_form"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -53,26 +100,54 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="形态信息采集" />
+                android:text="藤-形态信息采集" />
         </LinearLayout>
+
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/collect_property"
         android:layout_width="match_parent"
-        android:layout_height="800dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/collect_property"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_taketo_data" />
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_taketo_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="竹-材性信息采集" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/t_collect_property"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="材性信息采集" />
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_taketo_data" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="藤-材性信息采集" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

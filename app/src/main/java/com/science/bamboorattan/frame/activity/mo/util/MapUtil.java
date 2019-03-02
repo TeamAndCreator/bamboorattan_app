@@ -48,8 +48,28 @@ public class MapUtil {
             case CATHETERMORPHOLOGY:
                 return getCatheterMorphologyList();
             case VASCULARBUNDLEMORPHOLOGY:
-            default:
                 return getVascularBundelMorphologyList();
+            case TGENUS:
+                return getTGenusList();
+            case TSPEC:
+                return getTSpecList();
+            case TVASCULARBUNDLEMORPHOLOGY:
+                return getTVascularBundelMorphologyList();
+            case TCATHETERMORPHOLOGY:
+                return getTCatheterMorphologyList();
+            case TTISSUEPROPORTION:
+                return getTTissueProportionList();
+            case TFIBERMORPHOLOGY:
+                return getTFiberMorphologyList();
+            case TSTRUCTURE:
+                return getTStructureList();
+            case TMECHANICS:
+                return getTMechanicsList();
+            case TCHEMISTRY:
+                return getTChemistryList();
+            case TPHYSICS:
+            default:
+                return getTPhysicsList();
         }
     }
 
@@ -385,6 +405,195 @@ public class MapUtil {
      * @return
      */
     private static List<Pair> getFiberMorphologyList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("纤维长度：").setUnit("um"));
+        pairs.add(new Pair().setKey("纤维宽度：").setUnit("um"));
+        pairs.add(new Pair().setKey("纤维双壁厚：").setUnit("um"));
+        pairs.add(new Pair().setKey("纤维长宽比："));
+        pairs.add(new Pair().setKey("纤维腔径：").setUnit("um"));
+        pairs.add(new Pair().setKey("纤维壁腔比："));
+        pairs.add(new Pair().setKey("纤维腔径比："));
+        return pairs;
+    }
+
+    /**
+     * 20、藤属表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTGenusList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("英文名称："));
+        pairs.add(new Pair().setKey("拉丁名称："));
+        pairs.add(new Pair().setKey("别名："));
+        pairs.add(new Pair().setKey("描述："));
+        pairs.add(new Pair().setKey("排序序号："));
+        return pairs;
+    }
+
+    /**
+     * 21、藤种表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTSpecList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("英文名称："));
+        pairs.add(new Pair().setKey("拉丁名称："));
+        pairs.add(new Pair().setKey("种别名："));
+        pairs.add(new Pair().setKey("种类编码："));
+        pairs.add(new Pair().setKey("种类条形码："));
+        pairs.add(new Pair().setKey("种类DNA码："));
+        pairs.add(new Pair().setKey("国内分布："));
+        pairs.add(new Pair().setKey("国外分布："));
+        pairs.add(new Pair().setKey("视频："));
+        pairs.add(new Pair().setKey("图片："));
+        pairs.add(new Pair().setKey("排序序号："));
+        pairs.add(new Pair().setKey("种描述："));
+        return pairs;
+    }
+
+    /**
+     * 12、结构性质表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTStructureList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("胸高处的秆径：").setUnit("mm"));
+        pairs.add(new Pair().setKey("竹筒壁厚：").setUnit("mm"));
+        pairs.add(new Pair().setKey("最长节间长：").setUnit("cm"));
+        pairs.add(new Pair().setKey("2m处的藤径(mm)：").setUnit("mm"));
+        return pairs;
+    }
+
+
+    /**
+     * 13、物理性质表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTPhysicsList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("相对含水率：").setUnit("%"));
+        pairs.add(new Pair().setKey("绝对含水率：").setUnit("%"));
+        pairs.add(new Pair().setKey("生材密度：").setUnit("Midu"));
+        pairs.add(new Pair().setKey("基本密度：").setUnit("Midu"));
+        pairs.add(new Pair().setKey("气干密度：").setUnit("Midu"));
+        pairs.add(new Pair().setKey("绝干密度：").setUnit("Midu"));
+        pairs.add(new Pair().setKey("湿材到气干（气干率）：").setUnit("%"));
+        pairs.add(new Pair().setKey("湿材到全干（线干缩性）：").setUnit("%"));
+        pairs.add(new Pair().setKey("湿材到气干（体积干缩性）").setUnit("%"));
+        pairs.add(new Pair().setKey("湿材到全干（体积干缩性）：").setUnit("%"));
+        pairs.add(new Pair().setKey("气干缩率：").setUnit("%"));
+        pairs.add(new Pair().setKey("气干缩率（弦向）：").setUnit("%"));
+        pairs.add(new Pair().setKey("气干缩率（径向）").setUnit("%"));
+        pairs.add(new Pair().setKey("气干缩率（纵向）：").setUnit("%"));
+        pairs.add(new Pair().setKey("气干缩率（体积）：").setUnit("%"));
+        pairs.add(new Pair().setKey("全干缩率（弦向）：").setUnit("%"));
+        pairs.add(new Pair().setKey("全干缩率（径向）：").setUnit("%"));
+        pairs.add(new Pair().setKey("全干缩率（纵向）：").setUnit("%"));
+        pairs.add(new Pair().setKey("全干缩率（体积）：").setUnit("%"));
+        return pairs;
+    }
+
+    /**
+     * 14、化学性质表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTChemistryList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("综纤维素：").setUnit("%"));
+        pairs.add(new Pair().setKey("纤维素：").setUnit("%"));
+        pairs.add(new Pair().setKey("半纤维素：").setUnit("%"));
+        pairs.add(new Pair().setKey("a纤维素：").setUnit("%"));
+        pairs.add(new Pair().setKey("酸不溶木质素：").setUnit("%"));
+        pairs.add(new Pair().setKey("苯醇抽提物：").setUnit("%"));
+        pairs.add(new Pair().setKey("热水抽提物：").setUnit("%"));
+        pairs.add(new Pair().setKey("冷抽提物：").setUnit("%"));
+        pairs.add(new Pair().setKey("灰分：").setUnit("%"));
+        return pairs;
+    }
+
+
+    /**
+     * 15、力学性质表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTMechanicsList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("抗弯弹性模量：").setUnit("Gpa"));
+        pairs.add(new Pair().setKey("抗弯强度：").setUnit("Gpa"));
+        pairs.add(new Pair().setKey("顺纹抗压强度(压缩)：").setUnit("Gpa"));
+        pairs.add(new Pair().setKey("抗剪强度：").setUnit("Gpa"));
+        pairs.add(new Pair().setKey("顺纹抗拉强度(拉伸)：").setUnit("Gpa"));
+        pairs.add(new Pair().setKey("冲击韧性：").setUnit("Renxiang"));
+        pairs.add(new Pair().setKey("柔量：").setUnit("m㎡/N"));
+        return pairs;
+    }
+
+    /**
+     * 16、导管形态表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTCatheterMorphologyList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("导管长度：").setUnit("um"));
+        pairs.add(new Pair().setKey("导管直径：").setUnit("um"));
+        pairs.add(new Pair().setKey("导管密度：").setUnit("个/m㎡"));
+        pairs.add(new Pair().setKey("导管形态指数："));
+        return pairs;
+    }
+
+
+    /**
+     * 17、维管束形态表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTVascularBundelMorphologyList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("维管束径向直径：").setUnit("um"));
+        pairs.add(new Pair().setKey("维管束弦向直径：").setUnit("um"));
+        pairs.add(new Pair().setKey("维管束密度：").setUnit("个/m㎡"));
+        return pairs;
+    }
+
+    /**
+     * 18、组织比量表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTTissueProportionList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("纤维比量：").setUnit("%"));
+        pairs.add(new Pair().setKey("导管比量：").setUnit("%"));
+        pairs.add(new Pair().setKey("筛管比量：").setUnit("%"));
+        pairs.add(new Pair().setKey("薄壁细胞比量：").setUnit("%"));
+        return pairs;
+    }
+
+    /**
+     * 19、纤维形态表添加
+     *
+     * @return
+     */
+    private static List<Pair> getTFiberMorphologyList() {
 
         List<Pair> pairs = new ArrayList<>();
         pairs.add(new Pair().setKey("纤维长度：").setUnit("um"));

@@ -126,10 +126,12 @@ public class ZhuFragment extends ABaseFragment {
     }
 
     private void getUserInfo() {
+        String userparam = PreferencesUtils.getString(super.mContext,GlobalConstants.SP_USER_NAME);
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.GET)
                         .setUrl(GlobalConstants.USER_INFO)
+                        .setUserParams(userparam)
                         .setPage(1)
                         .setActionType(0)
                         .createTask());

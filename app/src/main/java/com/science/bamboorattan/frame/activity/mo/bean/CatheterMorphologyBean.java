@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class CatheterMorphologyBean implements Serializable {
 
     private String saveOperateFlag;
-    private String id;
+    private String chmId;
     private String specId;
     private String chmCatheterLenghtUnitMicrom;
     private String chmCatheterDiameterUnitMicrom;
@@ -22,11 +22,11 @@ public class CatheterMorphologyBean implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return chmId;
     }
 
     public CatheterMorphologyBean setId(String id) {
-        this.id = id;
+        this.chmId = id;
         return this;
     }
 

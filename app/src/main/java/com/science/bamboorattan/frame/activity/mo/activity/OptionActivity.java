@@ -44,11 +44,17 @@ public class OptionActivity extends ABaseActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
         if (mType == 0) {
-            mTitleTv.setText("形态信息采集");
+            mTitleTv.setText("竹-形态信息采集");
             mCatalog = Table.UNDERSTEM;
-        } else {
-            mTitleTv.setText("材性信息采集");
+        } else if (mType ==1){
+            mTitleTv.setText("竹-材性信息采集");
             mCatalog = Table.STRUCTURE;
+        } else if (mType == 2) {
+            mTitleTv.setText("藤-形态信息采集");
+            mCatalog = Table.UNDERSTEM;
+        }else{
+            mTitleTv.setText("藤-材性信息采集");
+            mCatalog = Table.TSTRUCTURE;
         }
         getCatalogList();
         mAdapter = new OptionAdapter(this, R.layout.item_option);
@@ -76,7 +82,7 @@ public class OptionActivity extends ABaseActivity {
                     .TISSUEPROPORTION));
             mSelection.add(new CatalogBean().setCatalogName("纤维形态表添加").setTable(Table
                     .FIBERMORPHOLOGY));
-        } else {
+        } else if (mType == 0){
             mSelection.add(new CatalogBean().setCatalogName("地下茎表添加").setTable(Table.UNDERSTEM));
             mSelection.add(new CatalogBean().setCatalogName("竹秆表添加").setTable(Table.CULM));
             mSelection.add(new CatalogBean().setCatalogName("竹叶表添加").setTable(Table.LEAF));
@@ -86,7 +92,32 @@ public class OptionActivity extends ABaseActivity {
             mSelection.add(new CatalogBean().setCatalogName("箨舌表添加").setTable(Table.SHEATHTONGUE));
             mSelection.add(new CatalogBean().setCatalogName("箨片表添加").setTable(Table.SHEATHSHELL));
             mSelection.add(new CatalogBean().setCatalogName("花果形态表添加").setTable(Table.FLOWERFRUIT));
+        }else if (mType == 3) {
+            mSelection.add(new CatalogBean().setCatalogName("结构性质表添加").setTable(Table.TSTRUCTURE));
+            mSelection.add(new CatalogBean().setCatalogName("物理性质表添加").setTable(Table.TPHYSICS));
+            mSelection.add(new CatalogBean().setCatalogName("化学性质表添加").setTable(Table.TCHEMISTRY));
+            mSelection.add(new CatalogBean().setCatalogName("力学性质表添加").setTable(Table.TMECHANICS));
+            mSelection.add(new CatalogBean().setCatalogName("导管形态表添加").setTable(Table
+                    .TCATHETERMORPHOLOGY));
+            mSelection.add(new CatalogBean().setCatalogName("维管束形态表添加").setTable(Table
+                    .TVASCULARBUNDLEMORPHOLOGY));
+            mSelection.add(new CatalogBean().setCatalogName("组织比量表添加").setTable(Table
+                    .TTISSUEPROPORTION));
+            mSelection.add(new CatalogBean().setCatalogName("纤维形态表添加").setTable(Table
+                    .TFIBERMORPHOLOGY));
         }
+//        else if (mType ==2){
+//            mSelection.add(new CatalogBean().setCatalogName("地下茎表添加").setTable(Table.UNDERSTEM));
+//            mSelection.add(new CatalogBean().setCatalogName("竹秆表添加").setTable(Table.CULM));
+//            mSelection.add(new CatalogBean().setCatalogName("竹叶表添加").setTable(Table.LEAF));
+//            mSelection.add(new CatalogBean().setCatalogName("箨环表添加").setTable(Table.SHEATHNODE));
+//            mSelection.add(new CatalogBean().setCatalogName("箨鞘表添加").setTable(Table.SHEATH));
+//            mSelection.add(new CatalogBean().setCatalogName("箨耳表添加").setTable(Table.SHEATHEAR));
+//            mSelection.add(new CatalogBean().setCatalogName("箨舌表添加").setTable(Table.SHEATHTONGUE));
+//            mSelection.add(new CatalogBean().setCatalogName("箨片表添加").setTable(Table.SHEATHSHELL));
+//            mSelection.add(new CatalogBean().setCatalogName("花果形态表添加").setTable(Table.FLOWERFRUIT));
+//        }
+
     }
 
     @Override

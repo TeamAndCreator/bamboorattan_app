@@ -3,8 +3,8 @@ package com.science.bamboorattan.frame.activity.mo.util;
 public enum Table {
 
     /**
-     * 属，
-     * 种
+     * 竹属，
+     * 竹种
      * 地下茎
      * 竹秆
      * 竹叶
@@ -22,6 +22,16 @@ public enum Table {
      * 维管束形态
      * 组织比量
      * 纤维形态
+     * 藤属
+     * 藤种
+     * 藤结构性质
+     * 藤物理性质
+     * 藤化学性质
+     * 藤力学性质
+     * 藤导管形态
+     * 藤维管束形态
+     * 藤组织比量
+     * 藤纤维形态
      */
     GENUS,
     SPEC,
@@ -41,5 +51,15 @@ public enum Table {
     CATHETERMORPHOLOGY,
     VASCULARBUNDLEMORPHOLOGY,
     TISSUEPROPORTION,
-    FIBERMORPHOLOGY
+    FIBERMORPHOLOGY,
+    TGENUS,//藤
+    TSPEC,
+    TSTRUCTURE,
+    TPHYSICS,
+    TCHEMISTRY,
+    TMECHANICS,
+    TCATHETERMORPHOLOGY,
+    TVASCULARBUNDLEMORPHOLOGY,
+    TTISSUEPROPORTION,
+    TFIBERMORPHOLOGY,
 }

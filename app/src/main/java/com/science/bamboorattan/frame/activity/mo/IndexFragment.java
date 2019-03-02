@@ -26,10 +26,17 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
     private LinearLayout collect_bamrattan;
     private LinearLayout collect_form;
     private LinearLayout collect_property;
+    private LinearLayout t_collect_bamrattan;
+    private LinearLayout t_collect_form;
+    private LinearLayout t_collect_property;
     private Dialog bottomDialog;
-    private TextView tvSayHi;
-    private TextView tvBriberyMoney;
+    private Dialog bottomRattanDialog;
+    private TextView tvGenus;
+    private TextView tvSpec;
     private TextView tvCancel;
+    private TextView tvRattanGenus;
+    private TextView tvRattanSpec;
+    private TextView tvRattanCancel;
     private Context mContext;
     private TextView toolbarTitle;
     private Toolbar toolbar;
@@ -43,11 +50,15 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
         collect_bamrattan = view.findViewById(R.id.collect_bamrattan);
         collect_form = view.findViewById(R.id.collect_form);
         collect_property = view.findViewById(R.id.collect_property);
+        t_collect_bamrattan = view.findViewById(R.id.t_collect_bamrattan);
+        t_collect_form = view.findViewById(R.id.t_collect_form);
+        t_collect_property = view.findViewById(R.id.t_collect_property);
         toolbarTitle = view.findViewById(R.id.toolbar_title);
         toolbar = view.findViewById(R.id.toolbar);
         fakeStatusBar = view.findViewById(R.id.fake_status_bar);
         initData();
         initBottomDialog();
+        rattanBottomDialog();
         initEvent();
         return view;
     }
@@ -61,8 +72,11 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
         collect_bamrattan.setOnClickListener(this);
         collect_form.setOnClickListener(this);
         collect_property.setOnClickListener(this);
+        t_collect_bamrattan.setOnClickListener(this);
+        t_collect_property.setOnClickListener(this);
+        t_collect_form.setOnClickListener(this);
 
-        tvSayHi.setOnClickListener(new View.OnClickListener() {
+        tvGenus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (bottomDialog != null) {
@@ -74,7 +88,7 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        tvBriberyMoney.setOnClickListener(new View.OnClickListener() {
+        tvSpec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (bottomDialog != null) {
@@ -94,6 +108,39 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
                 }
             }
         });
+
+        tvRattanGenus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bottomRattanDialog != null) {
+                    bottomRattanDialog.dismiss();
+                }
+                Intent intent = new Intent(mContext, BambooInfoCollectActivity.class);
+                intent.putExtra("catalog", Table.TGENUS);
+                startActivity(intent);
+            }
+        });
+
+        tvRattanSpec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bottomRattanDialog != null) {
+                    bottomRattanDialog.dismiss();
+                }
+                Intent intent = new Intent(mContext, BambooInfoCollectActivity.class);
+                intent.putExtra("catalog", Table.TSPEC);
+                startActivity(intent);
+            }
+        });
+
+        tvRattanCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bottomRattanDialog != null) {
+                    bottomRattanDialog.dismiss();
+                }
+            }
+        });
     }
 
 
@@ -107,6 +154,11 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
                     bottomDialog.show();
                 }
                 break;
+            case R.id.t_collect_bamrattan:
+                if (bottomRattanDialog != null) {
+                    bottomRattanDialog.show();
+                }
+                break;
             case R.id.collect_form:
                 intent = new Intent(mContext, OptionActivity.class);
                 intent.putExtra("type", 0);
@@ -115,6 +167,16 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
             case R.id.collect_property:
                 intent = new Intent(getActivity(), OptionActivity.class);
                 intent.putExtra("type", 1);
+                startActivity(intent);
+                break;
+//            case R.id.t_collect_form:
+//                intent = new Intent(mContext, OptionActivity.class);
+//                intent.putExtra("type", 2);
+//                startActivity(intent);
+//                break;
+            case R.id.t_collect_property:
+                intent = new Intent(getActivity(), OptionActivity.class);
+                intent.putExtra("type", 3);
                 startActivity(intent);
                 break;
             default:
@@ -126,8 +188,8 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
         bottomDialog = new Dialog(mContext, R.style.BottomDialog);
         View dialogContentView = LayoutInflater.from(mContext).inflate(R.layout
                 .dialog_content_circle, null);
-        tvSayHi = dialogContentView.findViewById(R.id.tv_say_hi);
-        tvBriberyMoney = dialogContentView.findViewById(R.id.tv_bribery_money);
+        tvGenus = dialogContentView.findViewById(R.id.tv_genus);
+        tvSpec = dialogContentView.findViewById(R.id.tv_spec);
         tvCancel = dialogContentView.findViewById(R.id.tv_cancle);
         bottomDialog.setContentView(dialogContentView);
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) dialogContentView
@@ -139,6 +201,28 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
         if (bottomDialog.getWindow() != null) {
             bottomDialog.getWindow().setGravity(Gravity.BOTTOM);
             bottomDialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
+        }
+    }
+/**
+ * 藤信息采集对话框
+ */
+    private void rattanBottomDialog() {
+        bottomRattanDialog = new Dialog(mContext, R.style.BottomDialog);
+        View dialogContentView = LayoutInflater.from(mContext).inflate(R.layout
+                .rattan_dialog_content_circle, null);
+        tvRattanGenus = dialogContentView.findViewById(R.id.tv_rattan_genus);
+        tvRattanSpec = dialogContentView.findViewById(R.id.tv_rattan_spec);
+        tvRattanCancel = dialogContentView.findViewById(R.id.tv_rattan_cancle);
+        bottomRattanDialog.setContentView(dialogContentView);
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) dialogContentView
+                .getLayoutParams();
+        params.width = getResources().getDisplayMetrics().widthPixels - DensityUtils.dp2px(mContext,
+                16f);
+        params.bottomMargin = DensityUtils.dp2px(mContext, 8f);
+        dialogContentView.setLayoutParams(params);
+        if (bottomRattanDialog.getWindow() != null) {
+            bottomRattanDialog.getWindow().setGravity(Gravity.BOTTOM);
+            bottomRattanDialog.getWindow().setWindowAnimations(R.style.BottomDialog_Animation);
         }
     }
 }

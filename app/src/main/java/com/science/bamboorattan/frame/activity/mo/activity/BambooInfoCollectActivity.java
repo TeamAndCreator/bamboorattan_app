@@ -65,6 +65,12 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     private int mMediaType;
     private String mImageName;
     private String mVideoName;
+//    private RelativeLayout mTSelectionRl;
+//    private RecyclerView mTRecyclerview;
+//    private TextView mTCatalogTv;
+//    private AppCompatButton mTSubmitBtn;
+//    private TextView mTSelectionTv;
+
 
     @Override
     protected int getContentViewId() {
@@ -80,23 +86,35 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         }
         String tableName = TableUtil.getTableName(mCatalog);
         mTitleTv.setText(String.format(getResources().getString(R.string.add_table), tableName));
-        if (mCatalog != null) {
-            if (mCatalog == Table.GENUS) {
-                mSelectionRl.setVisibility(View.GONE);
-            } else if (mCatalog == Table.SPEC) {
-                mCatalogTv.setText("属：");
-            } else {
-                mCatalogTv.setText("种：");
+        if (tableName.contains("藤")){
+            if (mCatalog != null) {
+                if (mCatalog == Table.TGENUS) {
+                    mSelectionRl.setVisibility(View.GONE);
+                } else if (mCatalog == Table.TSPEC) {
+                    mCatalogTv.setText("藤属：");
+                } else {
+                    mCatalogTv.setText("藤种：");
+                }
+            }
+        }else{
+            if (mCatalog != null) {
+                if (mCatalog == Table.GENUS) {
+                    mSelectionRl.setVisibility(View.GONE);
+                } else if (mCatalog == Table.SPEC) {
+                    mCatalogTv.setText("竹属：");
+                } else {
+                    mCatalogTv.setText("竹种：");
+                }
             }
         }
-
         mPairs.clear();
         mPairs.addAll(MapUtil.getList(mCatalog));
         mAdapter = new PairAdapter(this, R.layout.item_pair);
         mRecyclerview.setAdapter(mAdapter);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager
-                .VERTICAL, false));
+                    .VERTICAL, false));
         mAdapter.add(0, mPairs.size(), mPairs);
+
     }
 
     @Override
@@ -107,6 +125,7 @@ public class BambooInfoCollectActivity extends ABaseActivity {
                 onBackPressed();
             }
         });
+
         mSelectionRl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,7 +187,6 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         mCatalogTv = findViewById(R.id.tv_catalog);
         mSubmitBtn = findViewById(R.id.btn_submit);
         mSelectionTv = findViewById(R.id.tv_name);
-
     }
 
 

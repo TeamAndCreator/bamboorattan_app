@@ -54,8 +54,28 @@ public class RequestBuildUtil {
                 return GlobalConstants.CATHETER_MORPHOLOGY_ADD;
             case VASCULARBUNDLEMORPHOLOGY:
                 return GlobalConstants.VASCULAR_BUNDLE_MORPHOLOGY_ADD;
+            case TPHYSICS:
+                return GlobalConstants.T_PHYSICS_ADD;
+            case TCHEMISTRY:
+                return GlobalConstants.T_CHEMISTRY_ADD;
+            case TMECHANICS:
+                return GlobalConstants.T_MECHANICS_ADD;
+            case TSTRUCTURE:
+                return GlobalConstants.T_STRUCTURE_ADD;
+            case TFIBERMORPHOLOGY:
+                return GlobalConstants.T_FIBER_MORPHOLOGY_ADD;
+            case TTISSUEPROPORTION:
+                return GlobalConstants.T_TISSUE_PROPORTION_ADD;
+            case TCATHETERMORPHOLOGY:
+                return GlobalConstants.T_CATHETER_MORPHOLOGY_ADD;
+            case TVASCULARBUNDLEMORPHOLOGY:
+                return GlobalConstants.T_VASCULAR_BUNDLE_MORPHOLOGY_ADD;
+            case TSPEC:
+                return GlobalConstants.RATTAN_SPEC_ADD;
+            case TGENUS:
+                return GlobalConstants.RATTAN_GENUS_ADD;
             default:
-                return GlobalConstants.VASCULAR_BUNDLE_MORPHOLOGY_ADD;
+                return GlobalConstants.RATTAN_GENUS_ADD;
         }
     }
 

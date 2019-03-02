@@ -143,6 +143,8 @@ public class Task implements Serializable {
         private Object actionType = 0;
         @Nullable
         private Map<String, String> params;
+        @Nullable
+        private String  user_params;
 
         public TaskBuilder setUrl(@Nullable String url) {
             this.url = url;
@@ -178,7 +180,10 @@ public class Task implements Serializable {
             this.params = params;
             return this;
         }
-
+        public TaskBuilder setUserParams(@Nullable String  params) {
+            this.user_params = params;
+            return this;
+        }
 
         public Task createTask() {
             switch (taskType) {

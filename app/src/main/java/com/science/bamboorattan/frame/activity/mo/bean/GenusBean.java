@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class GenusBean implements Serializable {
 
     private String saveOperateFlag;
-    private String id;
+    private String genusId;
     private String genusNameCh;
     private String genusNameEn;
     private String genusNameLd;
@@ -26,11 +26,11 @@ public class GenusBean implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return genusId;
     }
 
     public GenusBean setId(String id) {
-        this.id = id;
+        this.genusId = id;
         return this;
     }
 

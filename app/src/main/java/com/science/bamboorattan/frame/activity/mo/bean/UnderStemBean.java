@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class UnderStemBean implements Serializable {
 
     private String saveOperateFlag;
-    private String id;
+    private String underStemId;
     private String specId;
     private String underStem;
 
@@ -22,11 +22,11 @@ public class UnderStemBean implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return underStemId;
     }
 
     public UnderStemBean setId(String id) {
-        this.id = id;
+        this.underStemId = id;
         return this;
     }
 

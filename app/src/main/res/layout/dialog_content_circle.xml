@@ -11,13 +11,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_say_hi"
+            android:id="@+id/tv_genus"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:gravity="center"
-            android:text="增加属表"
+            android:text="增加竹属表"
             android:textColor="@color/toolbar_title_color"
             android:textSize="@dimen/font_size_sev" />
 
@@ -27,13 +27,13 @@
             android:background="@color/line_color" />
 
         <TextView
-            android:id="@+id/tv_bribery_money"
+            android:id="@+id/tv_spec"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:gravity="center"
-            android:text="增加种表"
+            android:text="增加竹种表"
             android:textColor="@color/toolbar_title_color"
             android:textSize="@dimen/font_size_sev" />
     </LinearLayout>

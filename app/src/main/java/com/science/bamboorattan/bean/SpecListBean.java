@@ -49,7 +49,7 @@ public class SpecListBean implements Serializable {
      * addTime : null
      */
 
-    private String id;
+    private String specId;
     private Object specName;
     private Object ids;
     private String genusId;
@@ -92,11 +92,11 @@ public class SpecListBean implements Serializable {
     private Object addTime;
 
     public String getId() {
-        return id;
+        return specId;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.specId = id;
     }
 
     public Object getSpecName() {

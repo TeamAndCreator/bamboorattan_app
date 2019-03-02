@@ -19,6 +19,7 @@ import com.science.bamboorattan.frame.activity.mo.adapter.CatalogAdapter;
 import com.science.bamboorattan.frame.activity.mo.bean.CatalogBean;
 import com.science.bamboorattan.frame.activity.mo.constant.GlobalConstants;
 import com.science.bamboorattan.frame.activity.mo.util.Table;
+import com.science.bamboorattan.frame.activity.mo.util.TableUtil;
 import com.science.bamboorattan.listener.OnItemClickListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -63,13 +64,22 @@ public class SelectionActivity extends ABaseActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+        String tableName = TableUtil.getTableName(mCatalog);
         if (mCatalog != null) {
             if (mCatalog == Table.SPEC) {
                 mTitleTv.setText("选择竹属");
                 getGenusList();
+            }else if(mCatalog == Table.TSPEC){
+                mTitleTv.setText("选择藤属");
+                getGenusList();
             } else {
-                mTitleTv.setText("选择竹种");
-                getSpecList();
+                if (tableName.contains("藤")){
+                    mTitleTv.setText("选择藤种");
+                    getSpecList();
+                }else{
+                    mTitleTv.setText("选择竹种");
+                    getSpecList();
+                }
             }
         }
         mAdapter = new CatalogAdapter(this, R.layout.item_selection);
@@ -204,6 +214,55 @@ public class SelectionActivity extends ABaseActivity {
     }
 
     private List<SpecListBean> getSpecList(String result) throws Exception{
+
+        JsonParser parser = new JsonParser();
+        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        Gson gson = new Gson();
+        ArrayList<SpecListBean> specListBeans = new ArrayList<>();
+
+        for (JsonElement genus : jsonArray) {
+            SpecListBean bean = gson.fromJson(genus, SpecListBean.class);
+            specListBeans.add(bean);
+        }
+        return specListBeans;
+    }
+
+    private void getRattanGenusList() {
+        PresenterFactory.getInstance().createPresenter(this)
+                .execute(new Task.TaskBuilder()
+                        .setTaskType(TaskType.Method.GET)
+                        .setUrl(GlobalConstants.GET_GENUS_LIST)
+                        .setPage(1)
+                        .setActionType(0)
+                        .createTask());
+    }
+
+    private void getRattanSpecList() {
+        PresenterFactory.getInstance().createPresenter(this)
+                .execute(new Task.TaskBuilder()
+                        .setTaskType(TaskType.Method.GET)
+                        .setUrl(GlobalConstants.GET_SPEC_LIST)
+                        .setPage(1)
+                        .setActionType(1)
+                        .createTask());
+    }
+
+
+    private List<GenusListBean> getRattanGenusList(String result) throws Exception{
+
+        JsonParser parser = new JsonParser();
+        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        Gson gson = new Gson();
+        ArrayList<GenusListBean> genusListBeans = new ArrayList<>();
+
+        for (JsonElement genus : jsonArray) {
+            GenusListBean bean = gson.fromJson(genus, GenusListBean.class);
+            genusListBeans.add(bean);
+        }
+        return genusListBeans;
+    }
+
+    private List<SpecListBean> getRattanSpecList(String result) throws Exception{
 
         JsonParser parser = new JsonParser();
         JsonArray jsonArray = parser.parse(result).getAsJsonArray();

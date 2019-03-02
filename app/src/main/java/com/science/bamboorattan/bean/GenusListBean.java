@@ -23,7 +23,7 @@ public class GenusListBean implements Serializable {
      * endSortNum : null
      */
 
-    private String id;
+    private String genusId;
     private Object specName;
     private Object ids;
     private String genusNameCh;
@@ -40,11 +40,11 @@ public class GenusListBean implements Serializable {
     private Object endSortNum;
 
     public String getId() {
-        return id;
+        return genusId;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.genusId = id;
     }
 
     public Object getSpecName() {

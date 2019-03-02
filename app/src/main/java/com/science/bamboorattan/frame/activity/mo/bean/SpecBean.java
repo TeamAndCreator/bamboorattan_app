@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class SpecBean implements Serializable {
 
     private String saveOperateFlag;
-    private String  id;
+    private String  specId;
     private String  genusId;
     private String  genusName;
     private String  specNameCh;
@@ -36,11 +36,11 @@ public class SpecBean implements Serializable {
     }
 
     public String getId() {
-        return id;
+        return specId;
     }
 
     public SpecBean setId(String id) {
-        this.id = id;
+        this.specId = id;
         return this;
     }
 
