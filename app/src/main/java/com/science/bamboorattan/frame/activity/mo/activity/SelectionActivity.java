@@ -8,11 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.science.androidbase.mvp.Task;
 import com.science.androidbase.mvp.TaskType;
 import com.science.bamboorattan.R;
 import com.science.bamboorattan.bean.GenusListBean;
 import com.science.bamboorattan.bean.SpecListBean;
+import com.science.bamboorattan.bean.RattanGenusListBean;
+import com.science.bamboorattan.bean.RattanSpecListBean;
 import com.science.bamboorattan.common.PresenterFactory;
 import com.science.bamboorattan.frame.activity.ABaseActivity;
 import com.science.bamboorattan.frame.activity.mo.adapter.CatalogAdapter;
@@ -66,16 +71,16 @@ public class SelectionActivity extends ABaseActivity {
         }
         String tableName = TableUtil.getTableName(mCatalog);
         if (mCatalog != null) {
-            if (mCatalog == Table.SPEC) {
+            if (mCatalog == Table.SPEC) {//竹种和藤种添加
                 mTitleTv.setText("选择竹属");
                 getGenusList();
             }else if(mCatalog == Table.TSPEC){
                 mTitleTv.setText("选择藤属");
-                getGenusList();
+                getRattanGenusList();
             } else {
-                if (tableName.contains("藤")){
+                if (tableName.contains("藤")){//形态信息和材性信息采集
                     mTitleTv.setText("选择藤种");
-                    getSpecList();
+                    getRattanSpecList();
                 }else{
                     mTitleTv.setText("选择竹种");
                     getSpecList();
@@ -134,38 +139,78 @@ public class SelectionActivity extends ABaseActivity {
     public void onSuccess(String result, int page, Integer actionType) {
         Logger.d("SelectionActivity", result);
         mSelection.clear();
-        if (actionType == 0) {
-            List<GenusListBean> genusListBean = null;
-            try {
-                genusListBean = getGenusList(result);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (genusListBean != null) {
-                for (GenusListBean bean : genusListBean) {
-                    if (bean != null) {
-                        mSelection.add(new CatalogBean()
-                                .setCatalogName(bean.getGenusNameCh())
-                                .setId(bean.getId()));
+        String tableName = TableUtil.getTableName(mCatalog);
+        if (mCatalog!=null) {
+            if (actionType == 0) {
+                if (mCatalog == Table.SPEC){
+                    List<GenusListBean> genusListBean = null;
+                    try {
+                        genusListBean = getGenusList(result);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (genusListBean != null) {
+                        for (GenusListBean bean : genusListBean) {
+                            if (bean != null) {
+                                mSelection.add(new CatalogBean()
+                                        .setCatalogName(bean.getGenusNameCh())
+                                        .setId(bean.getId()));
+                            }
+                        }
+                    }
+                }else {
+                    List<RattanGenusListBean> rattanGenusListBean = null;
+                    try {
+                        rattanGenusListBean = getRattanGenusList(result);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (rattanGenusListBean != null) {
+                        for (RattanGenusListBean bean : rattanGenusListBean) {
+                            if (bean != null) {
+                                mSelection.add(new CatalogBean()
+                                        .setCatalogName(bean.getGenusNameCh())
+                                        .setId(bean.getId()));
+                            }
+                        }
                     }
                 }
-            }
-        } else {
-            List<SpecListBean> specListBean = null;
-            try {
-                specListBean = getSpecList(result);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (specListBean != null) {
-                for (SpecListBean bean : specListBean) {
-                    if (bean != null) {
-                        mSelection.add(new CatalogBean().setCatalogName(bean.getSpecNameCh())
-                                .setId(bean.getId()));
-                    }
-                }
-            }
 
+            } else {
+                if (tableName.contains("藤")){
+                    List<RattanSpecListBean> rattanSpecListBean = null;
+                    try {
+                        rattanSpecListBean = getRattanSpecList(result);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (rattanSpecListBean != null) {
+                        for (RattanSpecListBean bean : rattanSpecListBean) {
+                            if (bean != null) {
+                                mSelection.add(new CatalogBean().setCatalogName(bean.getSpecNameCh())
+                                        .setId(bean.getId()));
+                            }
+                        }
+                    }
+                }else{
+                    List<SpecListBean> specListBean = null;
+                    try {
+                        specListBean = getSpecList(result);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    if (specListBean != null) {
+                        for (SpecListBean bean : specListBean) {
+                            if (bean != null) {
+                                mSelection.add(new CatalogBean().setCatalogName(bean.getSpecNameCh())
+                                        .setId(bean.getId()));
+                            }
+                        }
+                    }
+                }
+
+
+            }
         }
 
         for (CatalogBean catalogBean : mSelection) {
@@ -201,13 +246,14 @@ public class SelectionActivity extends ABaseActivity {
 
     private List<GenusListBean> getGenusList(String result) throws Exception{
 
-        JsonParser parser = new JsonParser();
-        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
         Gson gson = new Gson();
+        JSONObject jsonObject = JSON.parseObject(result);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
+
         ArrayList<GenusListBean> genusListBeans = new ArrayList<>();
 
-        for (JsonElement genus : jsonArray) {
-            GenusListBean bean = gson.fromJson(genus, GenusListBean.class);
+        for (Object genus : jsonArray) {
+            GenusListBean bean = gson.fromJson(String.valueOf(genus), GenusListBean.class);
             genusListBeans.add(bean);
         }
         return genusListBeans;
@@ -215,13 +261,13 @@ public class SelectionActivity extends ABaseActivity {
 
     private List<SpecListBean> getSpecList(String result) throws Exception{
 
-        JsonParser parser = new JsonParser();
-        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        JSONObject jsonObject = JSON.parseObject(result);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
         Gson gson = new Gson();
         ArrayList<SpecListBean> specListBeans = new ArrayList<>();
 
-        for (JsonElement genus : jsonArray) {
-            SpecListBean bean = gson.fromJson(genus, SpecListBean.class);
+        for (Object genus : jsonArray) {
+            SpecListBean bean = gson.fromJson(String.valueOf(genus), SpecListBean.class);
             specListBeans.add(bean);
         }
         return specListBeans;
@@ -231,7 +277,7 @@ public class SelectionActivity extends ABaseActivity {
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.GET)
-                        .setUrl(GlobalConstants.GET_GENUS_LIST)
+                        .setUrl(GlobalConstants.GET_RATTANGENUS_LIST)
                         .setPage(1)
                         .setActionType(0)
                         .createTask());
@@ -241,38 +287,38 @@ public class SelectionActivity extends ABaseActivity {
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.GET)
-                        .setUrl(GlobalConstants.GET_SPEC_LIST)
+                        .setUrl(GlobalConstants.GET_RATTANSPEC_LIST)
                         .setPage(1)
                         .setActionType(1)
                         .createTask());
     }
 
 
-    private List<GenusListBean> getRattanGenusList(String result) throws Exception{
+    private List<RattanGenusListBean> getRattanGenusList(String result) throws Exception{
 
-        JsonParser parser = new JsonParser();
-        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        JSONObject jsonObject = JSON.parseObject(result);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
         Gson gson = new Gson();
-        ArrayList<GenusListBean> genusListBeans = new ArrayList<>();
+        ArrayList<RattanGenusListBean> rattanGenusListBeans = new ArrayList<>();
 
-        for (JsonElement genus : jsonArray) {
-            GenusListBean bean = gson.fromJson(genus, GenusListBean.class);
-            genusListBeans.add(bean);
+        for (Object genus : jsonArray) {
+            RattanGenusListBean bean = gson.fromJson(String.valueOf(genus), RattanGenusListBean.class);
+            rattanGenusListBeans.add(bean);
         }
-        return genusListBeans;
+        return rattanGenusListBeans;
     }
 
-    private List<SpecListBean> getRattanSpecList(String result) throws Exception{
+    private List<RattanSpecListBean> getRattanSpecList(String result) throws Exception{
 
-        JsonParser parser = new JsonParser();
-        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        JSONObject jsonObject = JSON.parseObject(result);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
         Gson gson = new Gson();
-        ArrayList<SpecListBean> specListBeans = new ArrayList<>();
+        ArrayList<RattanSpecListBean> rattanSpecListBeans = new ArrayList<>();
 
-        for (JsonElement genus : jsonArray) {
-            SpecListBean bean = gson.fromJson(genus, SpecListBean.class);
-            specListBeans.add(bean);
+        for (Object genus : jsonArray) {
+            RattanSpecListBean bean = gson.fromJson(String.valueOf(genus), RattanSpecListBean.class);
+            rattanSpecListBeans.add(bean);
         }
-        return specListBeans;
+        return rattanSpecListBeans;
     }
 }

@@ -108,6 +108,8 @@ public class LoginActivity extends ABaseActivity {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
+        }else if (bean.getCode() == 500){
+            Toast.makeText(LoginActivity.this, "用户名或者密码错误", Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -9,6 +9,9 @@ import com.science.androidbase.mvp.IView;
 import com.science.androidbase.mvp.PresenterCompat;
 import com.science.androidbase.mvp.Task;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
@@ -51,44 +54,93 @@ public class Presenter extends PresenterCompat {
             }
         }
         Logger.d(params);
-        OkHttpUtils
-                .post()
-                .url(task.getUrl())
-                .addHeader("Content-Type", "application/json")
-                .params(task.getParams())
-                .tag(getView())
-                .build()
-                .execute(new BaseStringCallback() {
-                    @Override
-                    public void onError(Call call, final Exception e, int id) {
-                        Logger.d(e.toString());
-                        final IView view = getView();
-                        if (mHandler != null && view != null) {
-                            mHandler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    view.onFailure(e.toString(), task.getPage(), task
-                                            .getActionType());
-                                }
-                            });
-                        }
-                    }
 
-                    @Override
-                    public void onResponse(final String response, int id) {
-                        final IView view = getView();
-                        if (mHandler != null && view != null) {
-                            mHandler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    view.onSuccess(response, task.getPage(), task
-                                            .getActionType());
-                                }
-                            });
+        if (task.getUrl().contains("/user/login")){
+            OkHttpUtils
+                    .post()
+                    .url(task.getUrl())
+                    .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                    .params(params)
+                    .tag(getView())
+                    .build()
+                    .execute(new BaseStringCallback() {
+                        @Override
+                        public void onError(Call call, final Exception e, int id) {
+                            Logger.d(e.toString());
+                            final IView view = getView();
+                            if (mHandler != null && view != null) {
+                                mHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.onFailure(e.toString(), task.getPage(), task
+                                                .getActionType());
+                                    }
+                                });
+                            }
                         }
 
-                    }
-                });
+                        @Override
+                        public void onResponse(final String response, int id) {
+                            final IView view = getView();
+                            if (mHandler != null && view != null) {
+                                mHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.onSuccess(response, task.getPage(), task
+                                                .getActionType());
+                                    }
+                                });
+                            }
+
+                        }
+                    });
+        }else {
+            OkHttpUtils
+                    .postString()
+                    .url(task.getUrl())
+                    .addHeader("Content-Type", "application/json")
+                    .content(convertMapToJsonString(params))
+                    .tag(getView())
+                    .build()
+                    .execute(new BaseStringCallback() {
+                        @Override
+                        public void onError(Call call, final Exception e, int id) {
+                            Logger.d(e.toString());
+                            final IView view = getView();
+                            if (mHandler != null && view != null) {
+                                mHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.onFailure(e.toString(), task.getPage(), task
+                                                .getActionType());
+                                    }
+                                });
+                            }
+                        }
+
+                        @Override
+                        public void onResponse(final String response, int id) {
+                            final IView view = getView();
+                            if (mHandler != null && view != null) {
+                                mHandler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.onSuccess(response, task.getPage(), task
+                                                .getActionType());
+                                    }
+                                });
+                            }
+
+                        }
+                    });
+        }
+
+    }
+    private String convertMapToJsonString(Map<String, String> params){
+        JSONObject json  = new JSONObject(params);
+        String jsonString = json.toString();
+        System.out.print(jsonString);
+        return jsonString;
     }
 
     @Override

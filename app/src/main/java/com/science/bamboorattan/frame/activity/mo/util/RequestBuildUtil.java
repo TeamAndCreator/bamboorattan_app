@@ -124,8 +124,28 @@ public class RequestBuildUtil {
                 return addCatheterMorphology(id, name, pairList);
             case VASCULARBUNDLEMORPHOLOGY:
                 return addVascularBundelMorphology(id, name, pairList);
+            case TGENUS:
+                return addRattanGenus(pairList);
+            case TSPEC:
+                return addRattanSpec(id, name, pairList);
+            case TPHYSICS:
+                return addRattanPhysics(id, name, pairList);
+            case TCHEMISTRY:
+                return addRattanChemistry(id, name, pairList);
+            case TMECHANICS:
+                return addRattanMechanics(id, name, pairList);
+            case TSTRUCTURE:
+                return addRattanStructure(id, name, pairList);
+            case TVASCULARBUNDLEMORPHOLOGY:
+                return addRattanVascularBundelMorphology(id, name, pairList);
+            case TCATHETERMORPHOLOGY:
+                return addRattanCatheterMorphology(id, name, pairList);
+            case TTISSUEPROPORTION:
+                return addRattanTissueProportion(id, name, pairList);
+            case TFIBERMORPHOLOGY:
+                return addRattanFiberMorphology(id, name, pairList);
             default:
-                return addVascularBundelMorphology(id, name, pairList);
+                return addRattanFiberMorphology(id, name, pairList);
         }
     }
 
@@ -586,9 +606,269 @@ public class RequestBuildUtil {
         return params;
     }
 
+    /**
+     * 20、藤属表添加
+     *
+     * @param pairs
+     * @return
+     */
+
+    private static Map<String, String> addRattanGenus(List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>();
+        int i = 0;
+        params.put("genusNameCh", pairs.get(i++).getValue());
+        params.put("genusNameEn", pairs.get(i++).getValue());
+        params.put("genusNameLd", pairs.get(i++).getValue());
+        params.put("genusNameOth", pairs.get(i++).getValue());
+        params.put("genusDesc", pairs.get(i++).getValue());
+        params.put("sortNum", pairs.get(i).getValue());
+        return params;
+    }
 
     /**
-     * 20、用户登录
+     * 21、藤种表添加
+     *
+     * @param id
+     * @param pairs
+     * @return
+     */
+
+    private static Map<String, String> addRattanSpec(String id, String genusName, List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>();
+        int i = 0;
+        params.put("genusId", id);
+        params.put("genusName", genusName);
+        params.put("specNameCh", pairs.get(i++).getValue());
+        params.put("specNameEn", pairs.get(i++).getValue());
+        String ld = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(ld)) {
+            params.put("specNameLd", ld);
+        }
+        String oth = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(oth)) {
+            params.put("specNameOth", oth);
+        }
+        String code = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(code)) {
+            params.put("specCode", code);
+        }
+        String barCode = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(barCode)) {
+            params.put("specBarCode", barCode);
+        }
+        String dna = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(dna)) {
+            params.put("specDna", dna);
+        }
+        String domestic = pairs.get(i++).getValue();
+        if (TextUtils.isEmpty(domestic)) {
+            params.put("specDomestic", domestic);
+        }
+        String foreign = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(foreign)) {
+            params.put("specForeign", foreign);
+        }
+        params.put("specVidio", pairs.get(i++).getValue());
+        params.put("specVidioName", pairs.get(i++).getValue());
+        params.put("specImgs", "");
+        params.put("specSortNum", pairs.get(i++).getValue());
+        String desc = pairs.get(i).getValue();
+        if (!TextUtils.isEmpty(desc)) {
+            params.put("specDesc", desc);
+
+        }
+        return params;
+    }
+
+    /**
+     * 22、藤结构性质表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return 请求参数
+     */
+    private static Map<String, String> addRattanStructure(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(6);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("stStemDiameterUnitMm", pairs.get(i++).getValue());
+        params.put("stWallThicknessUnitMm", pairs.get(i++).getValue());
+        params.put("stMaximumInternodeLengthUnitCm", pairs.get(i++).getValue());
+        params.put("stRattanDiameterUnitMm", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 23、藤物理性质表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanPhysics(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(21);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("phyRelativeUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAbsoluteUnitPercent", pairs.get(i++).getValue());
+        params.put("phyGreenDensityUnitMidu", pairs.get(i++).getValue());
+        params.put("phyBasicDensityUnitMidu", pairs.get(i++).getValue());
+        params.put("phyAirDryDensityUnitMidu", pairs.get(i++).getValue());
+        params.put("phyAbsoluteDryDensityUnitMidu", pairs.get(i++).getValue());
+        params.put("phyAirDryingLineUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeDryLineUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirDryVolumeUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeDryVolumeUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirShrinkageUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirShrinkageChordwiseUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirShrinkageRadialUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirShrinkageEdnwiseUnitPercent", pairs.get(i++).getValue());
+        params.put("phyAirShrinkageVolumeUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeShrinkageChordwiseUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeShrinkageRadialUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeShrinkageEdnwiseUnitPercent", pairs.get(i++).getValue());
+        params.put("phyWholeShrinkageVolumeUnitPercent", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 24、藤化学性质表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanChemistry(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(11);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("chemHolocelluloseUnitPercent", pairs.get(i++).getValue());
+        params.put("chemCelluloseUnitPercent", pairs.get(i++).getValue());
+        params.put("chemHemicelluloseUnitPercent", pairs.get(i++).getValue());
+        params.put("chemACelluloseUnitPercent", pairs.get(i++).getValue());
+        params.put("chemAcidInsolubleLigninUnitPercent", pairs.get(i++).getValue());
+        params.put("chemBenzeneAlcoholExtractionUnitPercent",
+                pairs.get(i++).getValue());
+        params.put("chemHotWaterExtractionUnitPercent", pairs.get(i++).getValue());
+        params.put("chemColdWaterExtractionUnitPercent", pairs.get(i++).getValue());
+        params.put("chemAshContentUnitPercent", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 25、藤力学性质表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanMechanics(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(9);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("mechBendingModulusElastictyUnitGpa", pairs.get(i++).getValue());
+        params.put("mechBendingStrenghtUnitMpa", pairs.get(i++).getValue());
+        params.put("mechCompressionStrenghtUnitMpa", pairs.get(i++).getValue());
+        params.put("mechShearStrenghtUnitMpa", pairs.get(i++).getValue());
+        params.put("mechTensileStrenghtUnitMpa", pairs.get(i++).getValue());
+        params.put("mechImpactDuctilityUnitRenxiang", pairs.get(i++).getValue());
+        params.put("mechComplianceUnitRouliang", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 26、藤导管形态表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanCatheterMorphology(String specId, String specName,
+                                                             List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(6);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("chmCatheterLenghtUnitMicrom", pairs.get(i++).getValue());
+        params.put("chmCatheterDiameterUnitMicrom", pairs.get(i++).getValue());
+        params.put("chmCatheterDensityUnitVcmidu", pairs.get(i++).getValue());
+        params.put("chmIndex", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 27、藤维管束形态表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanVascularBundelMorphology(String specId, String specName,
+                                                                   List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(5);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("vbmRadialDiameterUnitMicrom", pairs.get(i++).getValue());
+        params.put("vbmChordDiameterUnitMicrom", pairs.get(i++).getValue());
+        params.put("vbmDensityUnitVcmidu", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 28、藤组织比量表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanTissueProportion(String specId, String specName,
+                                                           List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(6);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("tpFiberPeoportionUnitPercent", pairs.get(i++).getValue());
+        params.put("tpVesselProportionUnitPercent", pairs.get(i++).getValue());
+        params.put("tpSieveTubeProportionUnitPercent", pairs.get(i++).getValue());
+        params.put("tpParenchymaCellProportionUnitPercent", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 29、纤维形态表添加
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanFiberMorphology(String specId, String specName,
+                                                          List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(9);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("fmLengthUnitMicron", pairs.get(i++).getValue());
+        params.put("fmWidthUnitMicron", pairs.get(i++).getValue());
+        params.put("fmDwallThicknessUnitMicron", pairs.get(i++).getValue());
+        params.put("fmLetWidthRatio", pairs.get(i++).getValue());
+        params.put("fmCavityDeameterUnitMicrom", pairs.get(i++).getValue());
+        params.put("fmWallCavityRatio", pairs.get(i++).getValue());
+        params.put("fmCavityDiameterRatio", pairs.get(i++).getValue());
+        return params;
+    }
+
+
+    /**
+     * 30、用户登录
      *
      * @param userName 账号
      * @param password  密码
@@ -603,7 +883,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 21、用户注册
+     * 31、用户注册
      *
      * @param userAcct 登录账号
      * @param userPwd  密码
