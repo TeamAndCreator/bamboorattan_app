@@ -65,11 +65,6 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     private int mMediaType;
     private String mImageName;
     private String mVideoName;
-//    private RelativeLayout mTSelectionRl;
-//    private RecyclerView mTRecyclerview;
-//    private TextView mTCatalogTv;
-//    private AppCompatButton mTSubmitBtn;
-//    private TextView mTSelectionTv;
 
 
     @Override
@@ -78,7 +73,27 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void getExtraParams() {
+        Intent intent = getIntent();
+        if (intent == null) {
+            return;
+        }
+        mCatalog = (Table) intent.getSerializableExtra("catalog");
+    }
+
+    @Override
+    protected void initView() {
+        mTooblBar = findViewById(R.id.toolbar);
+        mTitleTv = findViewById(R.id.toolbar_title_mid);
+        mSelectionRl = findViewById(R.id.ll_select);
+        mRecyclerview = findViewById(R.id.recyclerview);
+        mCatalogTv = findViewById(R.id.tv_catalog);
+        mSubmitBtn = findViewById(R.id.btn_submit);
+        mSelectionTv = findViewById(R.id.tv_name);
+    }
+
+    @Override
+    protected void initData() {//加载信息采集框
 
         setSupportActionBar(mTooblBar);
         if (getSupportActionBar() != null) {
@@ -136,11 +151,11 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         mSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mCatalog == Table.SPEC) {
-                    submitVideoFile();
-                } else {
+//                if (mCatalog == Table.SPEC) {
+//                    submitVideoFile();
+//                } else {
                     submitOrder();
-                }
+//                }
             }
         });
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
@@ -178,47 +193,11 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         });
     }
 
-    @Override
-    protected void initView() {
-        mTooblBar = findViewById(R.id.toolbar);
-        mTitleTv = findViewById(R.id.toolbar_title_mid);
-        mSelectionRl = findViewById(R.id.ll_select);
-        mRecyclerview = findViewById(R.id.recyclerview);
-        mCatalogTv = findViewById(R.id.tv_catalog);
-        mSubmitBtn = findViewById(R.id.btn_submit);
-        mSelectionTv = findViewById(R.id.tv_name);
-    }
 
-
-    @Override
-    protected void getExtraParams() {
-        Intent intent = getIntent();
-        if (intent == null) {
-            return;
-        }
-        mCatalog = (Table) intent.getSerializableExtra("catalog");
-    }
 
     @Override
     public void onSuccess(String result, int page, Integer actionType) {
         Logger.d(result);
-        switch (actionType) {
-            case 0:
-                handleUploadVideo(result);
-                break;
-            case 1:
-                handleUploadImage(result);
-                break;
-            case 2:
-                handleSubmitResult(result);
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    private void handleSubmitResult(String result) {
         try {
             ResultBean bean = GsonUtils.getInstance().transitionToBean(result, ResultBean.class);
             if (bean == null) {
@@ -233,43 +212,74 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         } catch (Exception e) {
             ToastUtils.showLongToast(this, e.getMessage());
         }
+//        switch (actionType) {
+//            case 0:
+//                handleUploadVideo(result);
+//                break;
+//            case 1:
+//                handleUploadImage(result);
+//                break;
+//            case 2:
+//                handleSubmitResult(result);
+//                break;
+//            default:
+//                break;
+//        }
+
     }
 
-    private void handleUploadVideo(String result) {
-        try {
-            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
-                    UploadResultBean.class);
-            if (bean == null) {
-                return;
-            }
-            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
-                ToastUtils.showLongToast(this, "视频文件上传失败");
-            } else {
-                mVideoPath = bean.getDisplayUrl();
-                submitImageFile();
-            }
-        } catch (Exception e) {
-            ToastUtils.showLongToast(this, e.getMessage());
-        }
-    }
+//    private void handleSubmitResult(String result) {
+//        try {
+//            ResultBean bean = GsonUtils.getInstance().transitionToBean(result, ResultBean.class);
+//            if (bean == null) {
+//                return;
+//            }
+//            if (bean.getCode() == 200) {
+//                ToastUtils.showLongToast(this, bean.getMsg());
+//                finish();
+//            } else {
+//                ToastUtils.showLongToast(this, bean.getMsg());
+//            }
+//        } catch (Exception e) {
+//            ToastUtils.showLongToast(this, e.getMessage());
+//        }
+//    }
 
-    private void handleUploadImage(String result) {
-        try {
-            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
-                    UploadResultBean.class);
-            if (bean == null) {
-                return;
-            }
-            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
-                ToastUtils.showLongToast(this, "图片上传失败");
-            } else {
-                mImagePath = bean.getDisplayUrl();
-                submitOrder();
-            }
-        } catch (Exception e) {
-            ToastUtils.showLongToast(this, e.getMessage());
-        }
-    }
+//    private void handleUploadVideo(String result) {
+//        try {
+//            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
+//                    UploadResultBean.class);
+//            if (bean == null) {
+//                return;
+//            }
+//            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
+//                ToastUtils.showLongToast(this, "视频文件上传失败");
+//            } else {
+//                mVideoPath = bean.getDisplayUrl();
+//                submitImageFile();
+//            }
+//        } catch (Exception e) {
+//            ToastUtils.showLongToast(this, e.getMessage());
+//        }
+//    }
+
+//    private void handleUploadImage(String result) {
+//        try {
+//            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
+//                    UploadResultBean.class);
+//            if (bean == null) {
+//                return;
+//            }
+//            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
+//                ToastUtils.showLongToast(this, "图片上传失败");
+//            } else {
+//                mImagePath = bean.getDisplayUrl();
+//                submitOrder();
+//            }
+//        } catch (Exception e) {
+//            ToastUtils.showLongToast(this, e.getMessage());
+//        }
+//    }
 
 
     @Override
@@ -299,15 +309,15 @@ public class BambooInfoCollectActivity extends ABaseActivity {
             }
         }
 
-        if (requestCode == 10086 && resultCode == 10000) {
+        if (requestCode == 10086 && resultCode == 10000) {//摄像
             if (data != null) {
                 int mediaType = data.getIntExtra("mediaType", 0);
                 String url = data.getStringExtra("url");
-                if (mediaType != mMediaType) {
-                    if (mMediaType == 0) {
-                        ToastUtils.showShortToast(BambooInfoCollectActivity.this, "请拍摄视频");
+                if (mediaType != mMediaType) {//mediaType为实际摄像过程中拍的是视频文件（0）还是照片（1），mMediaType为选择添加的是视频（0）还是照片（1）
+                    if (mMediaType == 0) {//拍摄错误的处理
+                        ToastUtils.showShortToast(BambooInfoCollectActivity.this, "请拍摄视频");//错误（1,0）
                     } else {
-                        ToastUtils.showShortToast(BambooInfoCollectActivity.this, "请拍摄照片");
+                        ToastUtils.showShortToast(BambooInfoCollectActivity.this, "请拍摄照片");//错误（0,1）
                     }
                     return;
                 }
@@ -334,28 +344,28 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     }
 
 
-    private void submitVideoFile() {
-        if (TextUtils.isEmpty(mVideoPath)) {
-            ToastUtils.showLongToast(this, "视频文件上传失败");
-            return;
-        }
-        uploadFiles(mVideoPath, 0, mVideoName);
-    }
-
-    private void submitImageFile() {
-        if (TextUtils.isEmpty(mImagePath)) {
-            ToastUtils.showLongToast(this, "图片上传失败");
-        } else {
-            uploadFiles(mImagePath, 1, mImageName);
-        }
-    }
+//    private void submitVideoFile() {
+//        if (TextUtils.isEmpty(mVideoPath)) {
+//            ToastUtils.showLongToast(this, "视频文件上传失败");
+//            return;
+//        }
+//        uploadFiles(mVideoPath, 0, mVideoName);
+//    }
+//private void submitImageFile() {
+////        if (TextUtils.isEmpty(mImagePath)) {
+////            ToastUtils.showLongToast(this, "图片上传失败");
+////        } else {
+////            uploadFiles(mImagePath, 1, mImageName);
+////        }
+////    }
+////
 
     private void submitOrder() {
         Map<String, String> params = RequestBuildUtil.getRequestParams(mCatalog, id,
                 mCatalogValue, mPairs);
-        if (mCatalog == Table.SPEC) {
+        if (mCatalog == Table.SPEC||mCatalog == Table.TSPEC) {
             params.put("specVidio", mVideoPath);
-            params.put("specVidioName", mVideoName);
+//            params.put("specVidioName", mVideoName);
             params.put("specImgs", mImagePath);
         }
         String url = RequestBuildUtil.getRequestUrl(mCatalog);
@@ -370,28 +380,28 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     }
 
 
-    private void uploadFiles(String filePath, int actionType, String fileName) {
+//    private void uploadFiles(String filePath, int actionType, String fileName) {
+//
+//        File file = new File(filePath);
+//        uploadFile(file, actionType, fileName);
+//    }
 
-        File file = new File(filePath);
-        uploadFile(file, actionType, fileName);
-    }
 
-
-    private void uploadFile(File file, int acitonType, String fileName) {
-        if (file == null) {
-            Log.e("Upload", "upload file is null");
-            return;
-        }
-        Map<String, String> params = new HashMap<>();
-        params.put("filename", fileName);
-        PresenterFactory.getInstance().createPresenter(this).execute(new Task.TaskBuilder()
-                .setTaskType(TaskType.Method.POST_FILE)
-                .setUrl(GlobalConstants.IMAGE_ADD)
-                .setFile(file)
-                .setParams(params)
-                .setPage(1)
-                .setActionType(acitonType)
-                .createTask());
-    }
+//    private void uploadFile(File file, int acitonType, String fileName) {
+//        if (file == null) {
+//            Log.e("Upload", "upload file is null");
+//            return;
+//        }
+//        Map<String, String> params = new HashMap<>();
+//        params.put("filename", fileName);
+//        PresenterFactory.getInstance().createPresenter(this).execute(new Task.TaskBuilder()
+//                .setTaskType(TaskType.Method.POST_FILE)
+//                .setUrl(GlobalConstants.IMAGE_ADD)
+//                .setFile(file)
+//                .setParams(params)
+//                .setPage(1)
+//                .setActionType(acitonType)
+//                .createTask());
+//    }
 
 }

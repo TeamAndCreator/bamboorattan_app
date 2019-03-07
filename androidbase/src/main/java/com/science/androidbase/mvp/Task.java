@@ -180,10 +180,6 @@ public class Task implements Serializable {
             this.params = params;
             return this;
         }
-        public TaskBuilder setUserParams(@Nullable String  params) {
-            this.user_params = params;
-            return this;
-        }
 
         public Task createTask() {
             switch (taskType) {

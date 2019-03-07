@@ -180,46 +180,60 @@ public class RequestBuildUtil {
         Map<String, String> params = new HashMap<>();
         int i = 0;
         params.put("genusId", id);
-        params.put("genusName", genusName);
+        params.put("genusNameCh", genusName);
         params.put("specNameCh", pairs.get(i++).getValue());
         params.put("specNameEn", pairs.get(i++).getValue());
-        String ld = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(ld)) {
-            params.put("specNameLd", ld);
-        }
-        String oth = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(oth)) {
-            params.put("specNameOth", oth);
-        }
-        String code = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(code)) {
-            params.put("specCode", code);
-        }
-        String barCode = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(barCode)) {
-            params.put("specBarCode", barCode);
-        }
-        String dna = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(dna)) {
-            params.put("specDna", dna);
-        }
-        String domestic = pairs.get(i++).getValue();
-        if (TextUtils.isEmpty(domestic)) {
-            params.put("specDomestic", domestic);
-        }
-        String foreign = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(foreign)) {
-            params.put("specForeign", foreign);
-        }
+        params.put("specNameLd", pairs.get(i++).getValue());
+        params.put("specNameOth", pairs.get(i++).getValue());
+        params.put("specCode", pairs.get(i++).getValue());
+        params.put("specBarCode", pairs.get(i++).getValue());
+        params.put("specDna", pairs.get(i++).getValue());
+        params.put("specDomestic", pairs.get(i++).getValue());
+        params.put("specForeign", pairs.get(i++).getValue());
         params.put("specVidio", pairs.get(i++).getValue());
-        params.put("specVidioName", pairs.get(i++).getValue());
-        params.put("specImgs", "");
+        params.put("specImgs", pairs.get(i++).getValue());
+        params.put("specDesc", pairs.get(i++).getValue());
         params.put("specSortNum", pairs.get(i++).getValue());
-        String desc = pairs.get(i).getValue();
-        if (!TextUtils.isEmpty(desc)) {
-            params.put("specDesc", desc);
-
-        }
+//        params.put("genusId", id);
+//        params.put("genusName", genusName);
+//        params.put("specNameCh", pairs.get(i++).getValue());
+//        params.put("specNameEn", pairs.get(i++).getValue());
+//        String ld = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(ld)) {
+//            params.put("specNameLd", ld);
+//        }
+//        String oth = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(oth)) {
+//            params.put("specNameOth", oth);
+//        }
+//        String code = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(code)) {
+//            params.put("specCode", code);
+//        }
+//        String barCode = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(barCode)) {
+//            params.put("specBarCode", barCode);
+//        }
+//        String dna = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(dna)) {
+//            params.put("specDna", dna);
+//        }
+//        String domestic = pairs.get(i++).getValue();
+//        if (TextUtils.isEmpty(domestic)) {
+//            params.put("specDomestic", domestic);
+//        }
+//        String foreign = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(foreign)) {
+//            params.put("specForeign", foreign);
+//        }
+//        params.put("specVidio", pairs.get(i++).getValue());
+//        params.put("specImgs", "");
+//        params.put("specSortNum", pairs.get(i++).getValue());
+//        String desc = pairs.get(i).getValue();
+//        if (!TextUtils.isEmpty(desc)) {
+//            params.put("specDesc", desc);
+//
+//        }
         return params;
     }
 
@@ -637,46 +651,56 @@ public class RequestBuildUtil {
         Map<String, String> params = new HashMap<>();
         int i = 0;
         params.put("genusId", id);
-        params.put("genusName", genusName);
+        params.put("genusNameCh", genusName);
         params.put("specNameCh", pairs.get(i++).getValue());
         params.put("specNameEn", pairs.get(i++).getValue());
-        String ld = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(ld)) {
-            params.put("specNameLd", ld);
-        }
-        String oth = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(oth)) {
-            params.put("specNameOth", oth);
-        }
-        String code = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(code)) {
-            params.put("specCode", code);
-        }
-        String barCode = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(barCode)) {
-            params.put("specBarCode", barCode);
-        }
-        String dna = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(dna)) {
-            params.put("specDna", dna);
-        }
-        String domestic = pairs.get(i++).getValue();
-        if (TextUtils.isEmpty(domestic)) {
-            params.put("specDomestic", domestic);
-        }
-        String foreign = pairs.get(i++).getValue();
-        if (!TextUtils.isEmpty(foreign)) {
-            params.put("specForeign", foreign);
-        }
+        params.put("specNameLd", pairs.get(i++).getValue());
+        params.put("specNameOth", pairs.get(i++).getValue());
+        params.put("specCode", pairs.get(i++).getValue());
+        params.put("specBarCode", pairs.get(i++).getValue());
+        params.put("specDna", pairs.get(i++).getValue());
+        params.put("specDomestic", pairs.get(i++).getValue());
+        params.put("specForeign", pairs.get(i++).getValue());
         params.put("specVidio", pairs.get(i++).getValue());
-        params.put("specVidioName", pairs.get(i++).getValue());
-        params.put("specImgs", "");
+        params.put("specImgs", pairs.get(i++).getValue());
         params.put("specSortNum", pairs.get(i++).getValue());
-        String desc = pairs.get(i).getValue();
-        if (!TextUtils.isEmpty(desc)) {
-            params.put("specDesc", desc);
-
-        }
+        params.put("specDesc", pairs.get(i++).getValue());
+//        String ld = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(ld)) {
+//            params.put("specNameLd", ld);
+//        }
+//        String oth = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(oth)) {
+//            params.put("specNameOth", oth);
+//        }
+//        String code = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(code)) {
+//            params.put("specCode", code);
+//        }
+//        String barCode = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(barCode)) {
+//            params.put("specBarCode", barCode);
+//        }
+//        String dna = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(dna)) {
+//            params.put("specDna", dna);
+//        }
+//        String domestic = pairs.get(i++).getValue();
+//        if (TextUtils.isEmpty(domestic)) {
+//            params.put("specDomestic", domestic);
+//        }
+//        String foreign = pairs.get(i++).getValue();
+//        if (!TextUtils.isEmpty(foreign)) {
+//            params.put("specForeign", foreign);
+//        }
+//        params.put("specVidio", pairs.get(i++).getValue());
+//        params.put("specImgs", pairs.get(i++).getValue());
+//        params.put("specSortNum", pairs.get(i++).getValue());
+//        String desc = pairs.get(i).getValue();
+//        if (!TextUtils.isEmpty(desc)) {
+//            params.put("specDesc", desc);
+//
+//        }
         return params;
     }
 

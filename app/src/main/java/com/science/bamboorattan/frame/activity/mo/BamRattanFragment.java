@@ -31,7 +31,7 @@ import java.util.List;
 /**
  *
  */
-public class MineFragment extends ABaseFragment {
+public class BamRattanFragment extends ABaseFragment {
     private TextView toolbarTitle;
     private Toolbar toolbar;
     private View fakeStatusBar;

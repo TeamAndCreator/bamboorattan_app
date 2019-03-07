@@ -109,8 +109,8 @@ public class MapUtil {
         pairs.add(new Pair().setKey("国外分布："));
         pairs.add(new Pair().setKey("视频："));
         pairs.add(new Pair().setKey("图片："));
-        pairs.add(new Pair().setKey("排序序号："));
         pairs.add(new Pair().setKey("种描述："));
+        pairs.add(new Pair().setKey("排序序号："));
         return pairs;
     }
 

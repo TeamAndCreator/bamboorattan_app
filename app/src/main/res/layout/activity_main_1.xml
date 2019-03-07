@@ -34,14 +34,14 @@
             />
 
         <RadioButton
-            android:id="@+id/main_rab_mine"
+            android:id="@+id/main_rab_bamrattan"
             style="@style/main_rbt"
             android:text="竹藤库"
             android:textColor="#b5b5b5"
             android:textSize="16sp"
             />
         <RadioButton
-            android:id="@+id/main_rab_certific"
+            android:id="@+id/main_rab_personal"
             style="@style/main_rbt"
             android:text="个人中心"
             android:textColor="#b5b5b5"

@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import com.science.androidbase.mvp.Task;
 import com.science.androidbase.mvp.TaskType;
 import com.science.androidbase.utils.PreferencesUtils;
@@ -26,7 +30,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ZhuFragment extends ABaseFragment {
+public class PersonalFragment extends ABaseFragment {
 
     private TextView toolbarTitle;
     private Toolbar toolbar;
@@ -86,11 +90,8 @@ public class ZhuFragment extends ABaseFragment {
     @Override
     public void onSuccess(String result, int page, Integer actionType) {
         if (actionType == 0) {
-            String s = result.replaceAll("\\s*", "");
-            if (s.length() < 20) {
-                return;
-            }
-            List<KeyValueBean> userInfo = getValidArray(s);
+
+            List<KeyValueBean> userInfo = getValidArray(result);
             mData.clear();
             mData.addAll(userInfo);
             mAdapter.notifyDataSetChanged();
@@ -127,54 +128,30 @@ public class ZhuFragment extends ABaseFragment {
 
     private void getUserInfo() {
         String userparam = PreferencesUtils.getString(super.mContext,GlobalConstants.SP_USER_NAME);
+        String  url = GlobalConstants.USER_INFO + userparam;
         PresenterFactory.getInstance().createPresenter(this)
                 .execute(new Task.TaskBuilder()
                         .setTaskType(TaskType.Method.GET)
-                        .setUrl(GlobalConstants.USER_INFO)
-                        .setUserParams(userparam)
+                        .setUrl(url)
                         .setPage(1)
                         .setActionType(0)
                         .createTask());
     }
 
     private List<KeyValueBean> getValidArray(String msg) {
-        String reg = "<td>(?:(?!<\\/td>)[\\s\\S])*<\\/td>";
-        Pattern p = Pattern.compile(reg);
-        Matcher m = p.matcher(msg);
-        String[] arr = new String[0];
-        while (m.find()) {
-            String[] dst = new String[arr.length + 1];
-            System.arraycopy(arr, 0, dst, 0, arr.length);
-            dst[dst.length - 1] = m.group();
-            arr = dst;
-        }
-        System.out.println(Arrays.toString(arr));
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println("index=" + i + ",value=" + arr[i]);
-        }
-
+        JSONObject user = JSON.parseObject(msg);
+        String message = user.getString("data");
         List<KeyValueBean> userInfo = new ArrayList<>();
-        int i = 2;
-        while (i <= 4) {
-            String key = getValidString(arr[i]);
-            String value = getValidString(arr[i + 1]);
-            userInfo.add(new KeyValueBean().setTitle(key).setValue(value));
-            i += 2;
-        }
-        for (int j = arr.length - 4; j < arr.length; ) {
-            String key = getValidString(arr[j]);
-            String value = getValidString(arr[j + 1]);
-            userInfo.add(new KeyValueBean().setTitle(key).setValue(value));
-            j += 2;
-        }
+        JSONObject jsonObject = JSON.parseObject(message);
+
+        userInfo.add(new KeyValueBean().setTitle("登录账号：").setValue(jsonObject.getString("userAcct")));
+        userInfo.add(new KeyValueBean().setTitle("用户姓名：").setValue(jsonObject.getString("userName")));
+        userInfo.add(new KeyValueBean().setTitle("所在部门：").setValue(jsonObject.getString("orgName")));
+        userInfo.add(new KeyValueBean().setTitle("办公室电话：").setValue(jsonObject.getString("orgPhone")));
         userInfo.add(new KeyValueBean().setTitle("清除缓存"));
         userInfo.add(new KeyValueBean().setTitle("退出登录"));
         userInfo.add(new KeyValueBean().setTitle("关于我们"));
         return userInfo;
 
-    }
-
-    private String getValidString(String el) {
-        return el.replace("<td>", "").replace("</td>", "");
     }
 }

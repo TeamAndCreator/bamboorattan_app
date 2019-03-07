@@ -34,7 +34,8 @@ public class GlobalConstants {
      * 用户信息查询
      */
 
-    public static final String USER_INFO = SERVER_IP + "/user/findByUserName";
+    public static final String USER_INFO = SERVER_IP + "/user/findByUserName/";
+//    public static final String USER_INFO = SERVER_IP + "/user/findId/{userId}";
 
     /**
      * 获取图形验证码
