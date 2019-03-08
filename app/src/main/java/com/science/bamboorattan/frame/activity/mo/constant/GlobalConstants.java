@@ -22,7 +22,7 @@ public class GlobalConstants {
     /**
      * 登出
      */
-    public static final String USER_LOGOUT = SERVER_IP + "/user/logout ";
+    public static final String USER_LOGOUT = SERVER_IP + "/user/logOut ";
 
     /**
      * 注册

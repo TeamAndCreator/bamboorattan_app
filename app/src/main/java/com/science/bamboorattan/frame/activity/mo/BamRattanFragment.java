@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.science.androidbase.mvp.Task;
 import com.science.androidbase.mvp.TaskType;
 import com.science.bamboorattan.R;
@@ -126,13 +129,13 @@ public class BamRattanFragment extends ABaseFragment {
 
     private List<SpecListBean> getSpecList(String result) throws Exception {
 
-        JsonParser parser = new JsonParser();
-        JsonArray jsonArray = parser.parse(result).getAsJsonArray();
+        JSONObject jsonObject = JSON.parseObject(result);
+        JSONArray jsonArray = jsonObject.getJSONArray("data");
         Gson gson = new Gson();
         ArrayList<SpecListBean> specListBeans = new ArrayList<>();
 
-        for (JsonElement genus : jsonArray) {
-            SpecListBean bean = gson.fromJson(genus, SpecListBean.class);
+        for (Object genus : jsonArray) {
+            SpecListBean bean = gson.fromJson(String.valueOf(genus), SpecListBean.class);
             specListBeans.add(bean);
         }
         return specListBeans;

@@ -12,26 +12,15 @@
     <list default="true" id="15c79a89-048c-47ee-85ab-eb8d5e90c09b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/androidbase/src/main/java/com/science/androidbase/mvp/Task.java" afterPath="$PROJECT_DIR$/androidbase/src/main/java/com/science/androidbase/mvp/Task.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/MineFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/ZhuFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/PersonalFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/BambooInfoCollectActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/BambooInfoCollectActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_1.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_1.xml" />
-      <change beforePath="$PROJECT_DIR$/bamboorattan.iml" afterPath="$PROJECT_DIR$/bamboorattan.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BambooInfoCollectActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BambooInfoCollectActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/BambooInfoCollectActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3872">
-              <caret line="352" column="7" lean-forward="false" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
+            <state relative-caret-position="-1268">
+              <caret line="317" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2602#2603#0" expanded="true" />
@@ -70,28 +59,7 @@
                 <element signature="class#5623:7064" expanded="false" />
                 <element signature="e#7701#7732#0" expanded="false" />
                 <element signature="e#8078#8132#0" expanded="false" />
-                <element signature="method#onFailure#0;class#BambooInfoCollectActivity#0" expanded="false" />
                 <element signature="method#startSelectionActivity#0;class#BambooInfoCollectActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Presenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/presenter/Presenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-              <folding>
-                <element signature="method#get#0;class#Presenter#0" expanded="false" />
-                <element signature="method#put#0;class#Presenter#0" expanded="false" />
-                <element signature="method#executeInsert#0;class#Presenter#0" expanded="false" />
-                <element signature="method#executeSelect#0;class#Presenter#0" expanded="false" />
-                <element signature="method#executeDelete#0;class#Presenter#0" expanded="false" />
-                <element signature="method#executeUpdate#0;class#Presenter#0" expanded="false" />
-                <element signature="method#delete#0;class#Presenter#0" expanded="false" />
-                <element signature="method#head#0;class#Presenter#0" expanded="false" />
-                <element signature="method#patch#0;class#Presenter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,18 +68,8 @@
       <file leaf-file-name="RequestBuildUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1039">
-              <caret line="663" column="59" lean-forward="true" selection-start-line="663" selection-start-column="59" selection-end-line="663" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BamRattanFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="-3795">
+              <caret line="663" column="59" lean-forward="false" selection-start-line="663" selection-start-column="59" selection-end-line="663" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -120,8 +78,8 @@
       <file leaf-file-name="PersonalFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/PersonalFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="-197">
+              <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
               <folding>
                 <element signature="e#1719#1750#0" expanded="true" />
               </folding>
@@ -129,24 +87,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java">
+      <file leaf-file-name="BamRattanFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="112" column="46" lean-forward="false" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+            <state relative-caret-position="222">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/MainActivity.java">
+      <file leaf-file-name="GlobalConstants.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1914">
-              <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,8 +110,8 @@
       <file leaf-file-name="SelectionActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/SelectionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="298" column="55" lean-forward="false" selection-start-line="298" selection-start-column="49" selection-end-line="298" selection-end-column="55" />
+            <state relative-caret-position="696">
+              <caret line="217" column="46" lean-forward="false" selection-start-line="217" selection-start-column="46" selection-end-line="217" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -6363,23 +6319,23 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/OptionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/presenter/Presenter.java" />
         <option value="$PROJECT_DIR$/okhttputils/src/main/java/com/library/http/okhttp/request/PostStringRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/bean/RattanGenusListBean.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/bean/RattanSpecListBean.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/SelectionActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/androidbase/src/main/java/com/science/androidbase/mvp/Task.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/BambooInfoCollectActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/PersonalFragment.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="152" />
     <option name="y" value="34" />
     <option name="width" value="1400" />
@@ -6400,6 +6356,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -6416,9 +6374,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -6506,19 +6462,6 @@
               <item name="activity" type="462c0819:PsiDirectoryNode" />
               <item name="mo" type="462c0819:PsiDirectoryNode" />
               <item name="activity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bamboorattan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bamboorattan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bamboorattan" type="462c0819:PsiDirectoryNode" />
-              <item name="frame" type="462c0819:PsiDirectoryNode" />
-              <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="mo" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bamboorattan" type="b2602c69:ProjectViewProjectNode" />
@@ -6751,8 +6694,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45060894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -6765,18 +6707,17 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57310706" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19485791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15696888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26413882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5155616" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2763496" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5277402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.081190795" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -6785,6 +6726,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1895887" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -6851,27 +6793,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="96" />
+      <option name="time" value="102" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/TSelectionActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/common/PresenterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/e99b7b608968f16b07104b93e62cb90701174d0/okhttp-3.10.0-sources.jar!/okhttp3/MediaType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/e99b7b608968f16b07104b93e62cb90701174d0/okhttp-3.10.0-sources.jar!/okhttp3/ResponseBody.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -7016,14 +6942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="80" column="41" lean-forward="true" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/zhu.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -7149,7 +7067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19371">
           <caret line="765" column="19" lean-forward="false" selection-start-line="765" selection-start-column="19" selection-end-line="765" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7157,7 +7074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-33321">
           <caret line="105" column="19" lean-forward="false" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7165,15 +7081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1907">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -7187,7 +7094,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/presenter/Presenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state relative-caret-position="0">
           <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
             <element signature="method#get#0;class#Presenter#0" expanded="false" />
@@ -7203,62 +7110,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/SelectionActivity.java">
+    <entry file="file://$PROJECT_DIR$/androidbase/src/main/java/com/science/androidbase/utils/ToastUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="298" column="55" lean-forward="false" selection-start-line="298" selection-start-column="49" selection-end-line="298" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/PersonalFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="229">
+          <caret line="340" column="19" lean-forward="false" selection-start-line="340" selection-start-column="19" selection-end-line="340" selection-end-column="19" />
           <folding>
-            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1039">
-          <caret line="663" column="59" lean-forward="true" selection-start-line="663" selection-start-column="59" selection-end-line="663" selection-end-column="59" />
-          <folding />
+        <state relative-caret-position="635">
+          <caret line="111" column="22" lean-forward="false" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-27/android/widget/Toast.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="112" column="46" lean-forward="false" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+        <state relative-caret-position="27">
+          <caret line="265" column="73" lean-forward="false" selection-start-line="265" selection-start-column="73" selection-end-line="265" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+        <state relative-caret-position="203">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/BambooInfoCollectActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3872">
-          <caret line="352" column="7" lean-forward="false" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
+        <state relative-caret-position="-1268">
+          <caret line="317" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2602#2603#0" expanded="true" />
@@ -7269,9 +7162,66 @@
             <element signature="class#5623:7064" expanded="false" />
             <element signature="e#7701#7732#0" expanded="false" />
             <element signature="e#8078#8132#0" expanded="false" />
-            <element signature="method#onFailure#0;class#BambooInfoCollectActivity#0" expanded="false" />
             <element signature="method#startSelectionActivity#0;class#BambooInfoCollectActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/MapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13134">
+          <caret line="112" column="46" lean-forward="false" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/activity/SelectionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="217" column="46" lean-forward="false" selection-start-line="217" selection-start-column="46" selection-end-line="217" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/util/RequestBuildUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3795">
+          <caret line="663" column="59" lean-forward="false" selection-start-line="663" selection-start-column="59" selection-end-line="663" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/PersonalFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+          <folding>
+            <element signature="e#1719#1750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/BamRattanFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/science/bamboorattan/frame/activity/mo/constant/GlobalConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
