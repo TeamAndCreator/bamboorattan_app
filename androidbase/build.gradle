@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //使用动态依赖关系(例如palette-v7:23.0.+)可能会导致意外的版本更新和回归不兼容的问题，建议明确指定库版本(如palette-v7:24.2.0)
+    api 'com.android.support:design:27.1.1'
+    //Material Design CardView SupportLibrary
+    api 'com.android.support:cardview-v7:27.1.1'
+    api 'com.android.support:palette-v7:27.1.1'
+    //    compile 'com.android.support:recyclerview-v7:25.3.1'
+//        api 'com.android.support:appcompat-v7:25.3.1'
+    //    compile 'com.android.support:support-v13:25.3.1'
+    //umeng analysis
+    //umeng analysis
+    api 'com.umeng.analytics:analytics:6.1.2'
+    //Tencent Bugly SDK
+    api 'com.tencent.bugly:crashreport:2.6.5'
+    //butterknife
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //GreenDao
+    //    compile 'org.greenrobot:greendao:3.2.0'
+    api 'com.google.code.gson:gson:2.8.0'
+    api 'com.orhanobut:logger:2.1.1'
+    api 'com.nineoldandroids:library:2.4.0'
+    testImplementation 'junit:junit:4.12'
+    api project(':easypermissions')
+    //    compile 'com.marshalchen.ultimaterecyclerview:library:0.7.3'
+}

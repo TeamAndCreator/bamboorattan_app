@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:orientation="vertical"
+    tools:context=".frame.activity.mo.activity.DetailActivity">
+
+    <include layout="@layout/toolbar_common" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/chart_round_corner_bg"
+            android:gravity="left|top"
+            android:lineSpacingExtra="4dp"
+            android:lineSpacingMultiplier="1.25"
+            android:padding="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/user_account_color"
+            android:textSize="@dimen/font_size_normal_high" />
+    </ScrollView>
+
+
+</LinearLayout>

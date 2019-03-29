@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DilatingDotsProgressBar">
+        <attr name="android:radius"/>
+        <attr name="android:color"/>
+        <attr name="dd_numDots" format="integer"/>
+        <attr name="dd_scaleMultiplier" format="float"/>
+        <attr name="dd_animationDuration" format="integer"/>
+        <attr name="dd_horizontalSpacing" format="dimension"/>
+        <attr name="dd_endColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="AutofitTextView">
+        <!-- Minimum size of the text. -->
+        <attr name="minTextSize" format="dimension"/>
+        <!-- Amount of precision used to calculate the correct text size to fit within its
+        bounds. Lower precision is more precise and takes more time. -->
+        <attr name="precision" format="float"/>
+        <!-- Defines whether to automatically resize text to fit to the view's bounds. -->
+        <attr name="sizeToFit" format="boolean"/>
+    </declare-styleable>
+</resources>

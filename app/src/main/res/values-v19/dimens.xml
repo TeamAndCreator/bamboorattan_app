@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="statusbar_view_height">25dp</dimen>
+    <dimen name="red_profile_margin_top">11dp</dimen>
+    <dimen name="friends_invite_margin_bottom">50dp</dimen>
+</resources>
