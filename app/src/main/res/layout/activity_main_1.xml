@@ -27,8 +27,8 @@
         <RadioButton
             android:id="@+id/main_rab_house"
             android:checked="true"
-            android:text="主页"
-            android:textColor="#b5b5b5"
+            android:text="信息采集"
+            android:textColor="#333333"
             style="@style/main_rbt"
             android:textSize="16sp"
             />
@@ -36,15 +36,15 @@
         <RadioButton
             android:id="@+id/main_rab_bamrattan"
             style="@style/main_rbt"
-            android:text="竹藤库"
-            android:textColor="#b5b5b5"
+            android:text="竹藤检索"
+            android:textColor="#333333"
             android:textSize="16sp"
             />
         <RadioButton
             android:id="@+id/main_rab_personal"
             style="@style/main_rbt"
             android:text="个人中心"
-            android:textColor="#b5b5b5"
+            android:textColor="#333333"
             android:textSize="16sp"
            />
     </RadioGroup>

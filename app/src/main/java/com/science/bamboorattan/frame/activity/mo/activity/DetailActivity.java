@@ -32,7 +32,7 @@ public class DetailActivity extends ABaseActivity {
                 () + "\n" + "英文名称：" + mBean.getSpecNameEn() + "\n" + "拉丁名称：" + mBean
                 .getSpecNameLd() + "\n" + "种别名：" + mBean.getSpecNameOth() + "\n" + "国内分布：" +
                 mBean.getSpecDomestic() + "\n" + "国外分布：" + mBean.getSpecForeign() + "\n" + "种描述："
-                + mBean.getSpecDesc());
+                + mBean.getSpecDesc()+"\n" + "采集时间："+mBean.getAddTime()+"\n" + "采集地点："+mBean.getSpecLocation());
     }
 
     @Override
@@ -61,6 +61,11 @@ public class DetailActivity extends ABaseActivity {
 
     @Override
     public void onSuccess(String result, int page, Integer actionType) {
+
+    }
+
+    @Override
+    public void initPermission() {
 
     }
 }

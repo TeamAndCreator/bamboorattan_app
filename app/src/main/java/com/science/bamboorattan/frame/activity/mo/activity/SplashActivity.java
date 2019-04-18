@@ -53,6 +53,11 @@ public class SplashActivity extends ABaseActivity {
     }
 
     @Override
+    public void initPermission() {
+
+    }
+
+    @Override
     public void onSuccess(String result, int page, Integer actionType) {
         LogUtils.d(TAG, "respose is" + result);
         if (TextUtils.isEmpty(result)) {

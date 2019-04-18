@@ -26,16 +26,8 @@ public class RequestBuildUtil {
                 return GlobalConstants.LEAF_ADD;
             case SHEATH:
                 return GlobalConstants.SHEATH_ADD;
-            case PHYSICS:
-                return GlobalConstants.PHYSICS_ADD;
-            case CHEMISTRY:
-                return GlobalConstants.CHEMISTRY_ADD;
-            case MECHANICS:
-                return GlobalConstants.MECHANICS_ADD;
             case SHEATHEAR:
                 return GlobalConstants.SHEATH_EAR_ADD;
-            case STRUCTURE:
-                return GlobalConstants.STRUCTURE_ADD;
             case UNDERSTEM:
                 return GlobalConstants.UNDERS_TEM_ADD;
             case SHEATHNODE:
@@ -46,6 +38,14 @@ public class RequestBuildUtil {
                 return GlobalConstants.SHEATH_SHELL_ADD;
             case SHEATHTONGUE:
                 return GlobalConstants.SHEATH_TONGUE_ADD;
+            case PHYSICS:
+                return GlobalConstants.PHYSICS_ADD;
+            case CHEMISTRY:
+                return GlobalConstants.CHEMISTRY_ADD;
+            case MECHANICS:
+                return GlobalConstants.MECHANICS_ADD;
+            case STRUCTURE:
+                return GlobalConstants.STRUCTURE_ADD;
             case FIBERMORPHOLOGY:
                 return GlobalConstants.FIBER_MORPHOLOGY_ADD;
             case TISSUEPROPORTION:
@@ -54,6 +54,24 @@ public class RequestBuildUtil {
                 return GlobalConstants.CATHETER_MORPHOLOGY_ADD;
             case VASCULARBUNDLEMORPHOLOGY:
                 return GlobalConstants.VASCULAR_BUNDLE_MORPHOLOGY_ADD;
+            case TCULM:
+                return GlobalConstants.T_CULM_ADD;
+            case TLEAF:
+                return GlobalConstants.T_LEAF_ADD;
+            case TSHEATH:
+                return GlobalConstants.T_SHEATH_ADD;
+            case TSHEATHEAR:
+                return GlobalConstants.T_SHEATH_EAR_ADD;
+            case TUNDERSTEM:
+                return GlobalConstants.T_UNDERS_TEM_ADD;
+            case TSHEATHNODE:
+                return GlobalConstants.T_SHEATH_NODE_ADD;
+            case TFLOWERFRUIT:
+                return GlobalConstants.T_FLOWER_FRUIT_ADD;
+            case TSHEATHSHELL:
+                return GlobalConstants.T_SHEATH_SHELL_ADD;
+            case TSHEATHTONGUE:
+                return GlobalConstants.T_SHEATH_TONGUE_ADD;
             case TPHYSICS:
                 return GlobalConstants.T_PHYSICS_ADD;
             case TCHEMISTRY:
@@ -128,24 +146,42 @@ public class RequestBuildUtil {
                 return addRattanGenus(pairList);
             case TSPEC:
                 return addRattanSpec(id, name, pairList);
+            case TCULM:
+                return addRattanCulm(id, name, pairList);
+            case TLEAF:
+                return addRattanLeaf(id, name, pairList);
+            case TSHEATH:
+                return addRattanSheath(id, name, pairList);
             case TPHYSICS:
                 return addRattanPhysics(id, name, pairList);
             case TCHEMISTRY:
                 return addRattanChemistry(id, name, pairList);
             case TMECHANICS:
                 return addRattanMechanics(id, name, pairList);
+            case TSHEATHEAR:
+                return addRattanSheathEar(id, name, pairList);
             case TSTRUCTURE:
                 return addRattanStructure(id, name, pairList);
-            case TVASCULARBUNDLEMORPHOLOGY:
-                return addRattanVascularBundelMorphology(id, name, pairList);
-            case TCATHETERMORPHOLOGY:
-                return addRattanCatheterMorphology(id, name, pairList);
-            case TTISSUEPROPORTION:
-                return addRattanTissueProportion(id, name, pairList);
+            case TUNDERSTEM:
+                return addRattanUnderStem(id, name, pairList);
+            case TSHEATHNODE:
+                return addRattanSheathNode(id, name, pairList);
+            case TFLOWERFRUIT:
+                return addRattanFlowerFruit(id, name, pairList);
+            case TSHEATHSHELL:
+                return addRattanSheathShell(id, name, pairList);
+            case TSHEATHTONGUE:
+                return addRattanSheathTongue(id, name, pairList);
             case TFIBERMORPHOLOGY:
                 return addRattanFiberMorphology(id, name, pairList);
+            case TTISSUEPROPORTION:
+                return addRattanTissueProportion(id, name, pairList);
+            case TCATHETERMORPHOLOGY:
+                return addRattanCatheterMorphology(id, name, pairList);
+            case TVASCULARBUNDLEMORPHOLOGY:
+                return addRattanVascularBundelMorphology(id, name, pairList);
             default:
-                return addRattanFiberMorphology(id, name, pairList);
+                return addRattanVascularBundelMorphology(id, name, pairList);
         }
     }
 
@@ -180,65 +216,55 @@ public class RequestBuildUtil {
         Map<String, String> params = new HashMap<>();
         int i = 0;
         params.put("genusId", id);
-        params.put("genusNameCh", genusName);
         params.put("specNameCh", pairs.get(i++).getValue());
         params.put("specNameEn", pairs.get(i++).getValue());
-        params.put("specNameLd", pairs.get(i++).getValue());
-        params.put("specNameOth", pairs.get(i++).getValue());
-        params.put("specCode", pairs.get(i++).getValue());
-        params.put("specBarCode", pairs.get(i++).getValue());
-        params.put("specDna", pairs.get(i++).getValue());
-        params.put("specDomestic", pairs.get(i++).getValue());
-        params.put("specForeign", pairs.get(i++).getValue());
-        params.put("specVidio", pairs.get(i++).getValue());
-        params.put("specImgs", pairs.get(i++).getValue());
-        params.put("specDesc", pairs.get(i++).getValue());
-        params.put("specSortNum", pairs.get(i++).getValue());
-//        params.put("genusId", id);
-//        params.put("genusName", genusName);
-//        params.put("specNameCh", pairs.get(i++).getValue());
-//        params.put("specNameEn", pairs.get(i++).getValue());
-//        String ld = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(ld)) {
-//            params.put("specNameLd", ld);
-//        }
-//        String oth = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(oth)) {
-//            params.put("specNameOth", oth);
-//        }
-//        String code = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(code)) {
-//            params.put("specCode", code);
-//        }
-//        String barCode = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(barCode)) {
-//            params.put("specBarCode", barCode);
-//        }
-//        String dna = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(dna)) {
-//            params.put("specDna", dna);
-//        }
-//        String domestic = pairs.get(i++).getValue();
-//        if (TextUtils.isEmpty(domestic)) {
-//            params.put("specDomestic", domestic);
-//        }
-//        String foreign = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(foreign)) {
-//            params.put("specForeign", foreign);
-//        }
-//        params.put("specVidio", pairs.get(i++).getValue());
-//        params.put("specImgs", "");
-//        params.put("specSortNum", pairs.get(i++).getValue());
-//        String desc = pairs.get(i).getValue();
-//        if (!TextUtils.isEmpty(desc)) {
-//            params.put("specDesc", desc);
-//
-//        }
+        String ld = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(ld)) {
+            params.put("specNameLd", ld);
+        }
+        String oth = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(oth)) {
+            params.put("specNameOth", oth);
+        }
+        String code = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(code)) {
+            params.put("specCode", code);
+        }
+        String barCode = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(barCode)) {
+            params.put("specBarCode", barCode);
+        }
+        String dna = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(dna)) {
+            params.put("specDna", dna);
+        }
+        String domestic = pairs.get(i++).getValue();
+        if (TextUtils.isEmpty(domestic)) {
+            params.put("specDomestic", domestic);
+        }
+        String foreign = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(foreign)) {
+            params.put("specForeign", foreign);
+        }
+        String vidio = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(vidio)) {
+            params.put("specVidio", vidio);
+        }
+        String img = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(img)) {
+            params.put("specImgs", img);
+        }
+        String desc = pairs.get(i).getValue();
+        if (!TextUtils.isEmpty(desc)) {
+            params.put("specDesc", desc);
+        }
+        params.put("addTime", pairs.get(i++).getValue());
+        params.put("specLocation",pairs.get(i++).getValue());
         return params;
     }
 
     /**
-     * 3、地下茎表添加
+     * 3、地下茎
      *
      * @param specId
      * @param pairs
@@ -255,7 +281,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 4、竹秆表添加
+     * 4、竹秆信息
      *
      * @param specId
      * @param pairs
@@ -283,7 +309,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 5、竹叶表添加
+     * 5、竹叶信息
      *
      * @param specId
      * @param pairs
@@ -309,7 +335,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 6、箨环表添加
+     * 6、箨环信息
      *
      * @param specId
      * @param pairs
@@ -327,7 +353,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 7、箨鞘表添加
+     * 7、箨鞘信息
      *
      * @param specId
      * @param pairs
@@ -347,7 +373,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 8、箨耳表添加
+     * 8、箨耳信息
      *
      * @param specId
      * @param pairs
@@ -367,7 +393,7 @@ public class RequestBuildUtil {
 
 
     /**
-     * 9、箨舌表添加
+     * 9、箨舌信息
      *
      * @param specId
      * @param pairs
@@ -387,7 +413,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 10、箨片表添加
+     * 10、箨片信息
      *
      * @param specId
      * @param pairs
@@ -411,7 +437,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 11、花果形态表添加
+     * 11、花果形态信息
      *
      * @param specId
      * @param pairs
@@ -435,7 +461,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 12、结构性质表添加
+     * 12、结构性质
      *
      * @param specId
      * @param pairs
@@ -455,7 +481,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 13、物理性质表添加
+     * 13、物理性质
      *
      * @param specId
      * @param pairs
@@ -490,7 +516,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 14、化学性质表添加
+     * 14、化学性质
      *
      * @param specId
      * @param pairs
@@ -516,7 +542,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 15、力学性质表添加
+     * 15、力学性质
      *
      * @param specId
      * @param pairs
@@ -539,7 +565,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 16、导管形态表添加
+     * 16、导管形态
      *
      * @param specId
      * @param pairs
@@ -559,7 +585,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 17、维管束形态表添加
+     * 17、维管束形态
      *
      * @param specId
      * @param pairs
@@ -578,7 +604,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 18、组织比量表添加
+     * 18、组织比量
      *
      * @param specId
      * @param pairs
@@ -598,7 +624,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 19、纤维形态表添加
+     * 19、纤维形态
      *
      * @param specId
      * @param pairs
@@ -651,61 +677,258 @@ public class RequestBuildUtil {
         Map<String, String> params = new HashMap<>();
         int i = 0;
         params.put("genusId", id);
-        params.put("genusNameCh", genusName);
         params.put("specNameCh", pairs.get(i++).getValue());
         params.put("specNameEn", pairs.get(i++).getValue());
-        params.put("specNameLd", pairs.get(i++).getValue());
-        params.put("specNameOth", pairs.get(i++).getValue());
-        params.put("specCode", pairs.get(i++).getValue());
-        params.put("specBarCode", pairs.get(i++).getValue());
-        params.put("specDna", pairs.get(i++).getValue());
-        params.put("specDomestic", pairs.get(i++).getValue());
-        params.put("specForeign", pairs.get(i++).getValue());
-        params.put("specVidio", pairs.get(i++).getValue());
-        params.put("specImgs", pairs.get(i++).getValue());
-        params.put("specSortNum", pairs.get(i++).getValue());
-        params.put("specDesc", pairs.get(i++).getValue());
-//        String ld = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(ld)) {
-//            params.put("specNameLd", ld);
-//        }
-//        String oth = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(oth)) {
-//            params.put("specNameOth", oth);
-//        }
-//        String code = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(code)) {
-//            params.put("specCode", code);
-//        }
-//        String barCode = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(barCode)) {
-//            params.put("specBarCode", barCode);
-//        }
-//        String dna = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(dna)) {
-//            params.put("specDna", dna);
-//        }
-//        String domestic = pairs.get(i++).getValue();
-//        if (TextUtils.isEmpty(domestic)) {
-//            params.put("specDomestic", domestic);
-//        }
-//        String foreign = pairs.get(i++).getValue();
-//        if (!TextUtils.isEmpty(foreign)) {
-//            params.put("specForeign", foreign);
-//        }
+//        params.put("specNameLd", pairs.get(i++).getValue());
+//        params.put("specNameOth", pairs.get(i++).getValue());
+//        params.put("specCode", pairs.get(i++).getValue());
+//        params.put("specBarCode", pairs.get(i++).getValue());
+//        params.put("specDna", pairs.get(i++).getValue());
+//        params.put("specDomestic", pairs.get(i++).getValue());
+//        params.put("specForeign", pairs.get(i++).getValue());
 //        params.put("specVidio", pairs.get(i++).getValue());
 //        params.put("specImgs", pairs.get(i++).getValue());
 //        params.put("specSortNum", pairs.get(i++).getValue());
-//        String desc = pairs.get(i).getValue();
-//        if (!TextUtils.isEmpty(desc)) {
-//            params.put("specDesc", desc);
-//
-//        }
+//        params.put("specDesc", pairs.get(i++).getValue());
+        String ld = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(ld)) {
+            params.put("specNameLd", ld);
+        }
+        String oth = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(oth)) {
+            params.put("specNameOth", oth);
+        }
+        String code = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(code)) {
+            params.put("specCode", code);
+        }
+        String barCode = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(barCode)) {
+            params.put("specBarCode", barCode);
+        }
+        String dna = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(dna)) {
+            params.put("specDna", dna);
+        }
+        String domestic = pairs.get(i++).getValue();
+        if (TextUtils.isEmpty(domestic)) {
+            params.put("specDomestic", domestic);
+        }
+        String foreign = pairs.get(i++).getValue();
+        if (!TextUtils.isEmpty(foreign)) {
+            params.put("specForeign", foreign);
+        }
+        params.put("specVidio", pairs.get(i++).getValue());
+        params.put("specImgs", pairs.get(i++).getValue());
+        String desc = pairs.get(i).getValue();
+        if (!TextUtils.isEmpty(desc)) {
+            params.put("specDesc", desc);
+
+        }
+        params.put("addTime", pairs.get(i++).getValue());
+        params.put("infoLocation",pairs.get(i++).getValue());
         return params;
     }
 
     /**
-     * 22、藤结构性质表添加
+     * 22、藤地下茎
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanUnderStem(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(3);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("underStem", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 23、藤竹秆信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanCulm(String specId, String specName, List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(15);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("leafTopShape", pairs.get(i++).getValue());
+        params.put("culmDiameter", pairs.get(i++).getValue());
+        params.put("culmColor", pairs.get(i++).getValue());
+        params.put("culmTop", pairs.get(i++).getValue());
+        params.put("culmStem", pairs.get(i++).getValue());
+        params.put("internodeLength", pairs.get(i++).getValue());
+        params.put("internodeShape", pairs.get(i++).getValue());
+        params.put("internodeAerialRoot", pairs.get(i++).getValue());
+        params.put("internodeBack", pairs.get(i++).getValue());
+        params.put("internodeCulmWall", pairs.get(i++).getValue());
+        params.put("youngStemBack", pairs.get(i++).getValue());
+        params.put("youngStemPowder", pairs.get(i++).getValue());
+        params.put("culmNode", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 24、藤叶信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanLeaf(String specId, String specName, List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(13);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("leafShape", pairs.get(i++).getValue());
+        params.put("leafLength", pairs.get(i++).getValue());
+        params.put("leafWidth", pairs.get(i++).getValue());
+        params.put("leafNum", pairs.get(i++).getValue());
+        params.put("leafBack", pairs.get(i++).getValue());
+        params.put("leafMargin", pairs.get(i++).getValue());
+        params.put("leafTongueShape", pairs.get(i++).getValue());
+        params.put("leafTongueHeight", pairs.get(i++).getValue());
+        params.put("leafStalkLength", pairs.get(i++).getValue());
+        params.put("leafBaseShape", pairs.get(i++).getValue());
+        params.put("leafTopShape", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 25、藤箨环信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanSheathNode(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(4);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("sheathNode", pairs.get(i++).getValue());
+        params.put("sheathNodeBack", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 26、藤箨鞘信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanSheath(String specId, String specName, List<Pair> pairs) {
+        Map<String, String> params = new HashMap<>(7);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("sheathShedTime", pairs.get(i++).getValue());
+        params.put("sheathChar", pairs.get(i++).getValue());
+        params.put("sheathTopForm", pairs.get(i++).getValue());
+        params.put("sheathBackPowder", pairs.get(i++).getValue());
+        params.put("sheathMarginForm", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 27、藤箨耳信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanSheathEar(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(5);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("sheathEarDev", pairs.get(i++).getValue());
+        params.put("sheathEarShape", pairs.get(i++).getValue());
+        params.put("sheathEarMargin", pairs.get(i).getValue());
+        return params;
+    }
+
+
+    /**
+     * 28、藤箨舌信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanSheathTongue(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(6);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("sheathTongueColor", pairs.get(i++).getValue());
+        params.put("sheathTongueHeight", pairs.get(i++).getValue());
+        params.put("sheathTongueMarginShape", pairs.get(i++).getValue());
+        params.put("sheathTongueBackPowderv", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 29、藤箨片信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    private static Map<String, String> addRattanSheathShell(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(10);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("sheathShellShape", pairs.get(i++).getValue());
+        params.put("sheathShellColor", pairs.get(i++).getValue());
+        params.put("sheathShellFall", pairs.get(i++).getValue());
+        params.put("sheathShellTopShape", pairs.get(i++).getValue());
+        params.put("sheathShellBaseShape", pairs.get(i++).getValue());
+        params.put("sheathShellMargin", pairs.get(i++).getValue());
+        params.put("sheathShellBackPowder", pairs.get(i++).getValue());
+        params.put("sheathRatioOf", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 30、藤花果形态信息
+     *
+     * @param specId
+     * @param pairs
+     * @return
+     */
+    public static Map<String, String> addRattanFlowerFruit(String specId, String specName, List<Pair>
+            pairs) {
+        Map<String, String> params = new HashMap<>(10);
+        int i = 0;
+        params.put("specId", specId);
+        params.put("specName", specName);
+        params.put("spikeletShape", pairs.get(i++).getValue());
+        params.put("spikeletBack", pairs.get(i++).getValue());
+        params.put("spikeletFloret", pairs.get(i++).getValue());
+        params.put("stamenNum", pairs.get(i++).getValue());
+        params.put("glume", pairs.get(i++).getValue());
+        params.put("lodicule", pairs.get(i++).getValue());
+        params.put("palea", pairs.get(i++).getValue());
+        params.put("lemma", pairs.get(i).getValue());
+        return params;
+    }
+
+    /**
+     * 31、藤结构性质
      *
      * @param specId
      * @param pairs
@@ -725,7 +948,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 23、藤物理性质表添加
+     * 32、藤物理性质
      *
      * @param specId
      * @param pairs
@@ -760,7 +983,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 24、藤化学性质表添加
+     * 33、藤化学性质
      *
      * @param specId
      * @param pairs
@@ -786,7 +1009,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 25、藤力学性质表添加
+     * 34、藤力学性质
      *
      * @param specId
      * @param pairs
@@ -809,7 +1032,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 26、藤导管形态表添加
+     * 35、藤导管形态
      *
      * @param specId
      * @param pairs
@@ -829,7 +1052,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 27、藤维管束形态表添加
+     * 36、藤维管束形态
      *
      * @param specId
      * @param pairs
@@ -848,7 +1071,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 28、藤组织比量表添加
+     * 37、藤组织比量
      *
      * @param specId
      * @param pairs
@@ -868,7 +1091,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 29、纤维形态表添加
+     * 38、纤维形态
      *
      * @param specId
      * @param pairs
@@ -892,7 +1115,7 @@ public class RequestBuildUtil {
 
 
     /**
-     * 30、用户登录
+     * 39、用户登录
      *
      * @param userName 账号
      * @param password  密码
@@ -907,7 +1130,7 @@ public class RequestBuildUtil {
     }
 
     /**
-     * 31、用户注册
+     * 40、用户注册
      *
      * @param userAcct 登录账号
      * @param userPwd  密码

@@ -53,23 +53,42 @@ public class MapUtil {
                 return getTGenusList();
             case TSPEC:
                 return getTSpecList();
-            case TVASCULARBUNDLEMORPHOLOGY:
-                return getTVascularBundelMorphologyList();
-            case TCATHETERMORPHOLOGY:
-                return getTCatheterMorphologyList();
-            case TTISSUEPROPORTION:
-                return getTTissueProportionList();
-            case TFIBERMORPHOLOGY:
-                return getTFiberMorphologyList();
-            case TSTRUCTURE:
-                return getTStructureList();
-            case TMECHANICS:
-                return getTMechanicsList();
+            case TCULM:
+                return getTCulmList();
+            case TLEAF:
+                return getTLeafList();
+            case TSHEATH:
+                return getTSheathList();
+            case TPHYSICS:
+                return getTPhysicsList();
             case TCHEMISTRY:
                 return getTChemistryList();
-            case TPHYSICS:
+            case TMECHANICS:
+                return getTMechanicsList();
+            case TSHEATHEAR:
+                return getTSheathEarList();
+            case TSTRUCTURE:
+                return getTStructureList();
+            case TUNDERSTEM:
+                return getTUnderStemList();
+            case TSHEATHNODE:
+                return getTSheathNodeList();
+            case TFLOWERFRUIT:
+                return getTFlowerFruitList();
+            case TSHEATHSHELL:
+                return getTSheathShellList();
+            case TSHEATHTONGUE:
+                return getTSheathTongueList();
+            case TFIBERMORPHOLOGY:
+                return getTFiberMorphologyList();
+            case TTISSUEPROPORTION:
+                return getTTissueProportionList();
+            case TCATHETERMORPHOLOGY:
+                return getTCatheterMorphologyList();
+            case TVASCULARBUNDLEMORPHOLOGY:
+                return getTVascularBundelMorphologyList();
             default:
-                return getTPhysicsList();
+                return getTVascularBundelMorphologyList();
         }
     }
 
@@ -81,7 +100,7 @@ public class MapUtil {
     private static List<Pair> getGenusList() {
 
         List<Pair> pairs = new ArrayList<>();
-        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("中文名称(*必填)："));
         pairs.add(new Pair().setKey("英文名称："));
         pairs.add(new Pair().setKey("拉丁名称："));
         pairs.add(new Pair().setKey("别名："));
@@ -98,7 +117,7 @@ public class MapUtil {
     private static List<Pair> getSpecList() {
 
         List<Pair> pairs = new ArrayList<>();
-        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("中文名称(*必填)："));
         pairs.add(new Pair().setKey("英文名称："));
         pairs.add(new Pair().setKey("拉丁名称："));
         pairs.add(new Pair().setKey("种别名："));
@@ -110,12 +129,11 @@ public class MapUtil {
         pairs.add(new Pair().setKey("视频："));
         pairs.add(new Pair().setKey("图片："));
         pairs.add(new Pair().setKey("种描述："));
-        pairs.add(new Pair().setKey("排序序号："));
         return pairs;
     }
 
     /**
-     * 3、地下茎表添加
+     * 3、地下茎
      *
      * @return
      */
@@ -127,7 +145,7 @@ public class MapUtil {
     }
 
     /**
-     * 4、竹秆表添加
+     * 4、竹秆信息
      *
      * @return
      */
@@ -151,7 +169,7 @@ public class MapUtil {
     }
 
     /**
-     * 5、竹叶表添加
+     * 5、竹叶信息
      *
      * @return
      */
@@ -173,7 +191,7 @@ public class MapUtil {
     }
 
     /**
-     * 6、箨环表添加
+     * 6、箨环信息
      *
      * @return
      */
@@ -186,7 +204,7 @@ public class MapUtil {
     }
 
     /**
-     * 7、箨鞘表添加
+     * 7、箨鞘信息
      *
      * @return
      */
@@ -202,7 +220,7 @@ public class MapUtil {
     }
 
     /**
-     * 8、箨耳表添加
+     * 8、箨耳信息
      *
      * @return
      */
@@ -216,7 +234,7 @@ public class MapUtil {
     }
 
     /**
-     * 9、箨舌表添加
+     * 9、箨舌信息
      *
      * @return
      */
@@ -231,7 +249,7 @@ public class MapUtil {
     }
 
     /**
-     * 10、箨片表添加
+     * 10、箨片信息
      *
      * @return
      */
@@ -250,7 +268,7 @@ public class MapUtil {
     }
 
     /**
-     * 11、花果形态表添加
+     * 11、花果形态信息
      *
      * @return
      */
@@ -270,7 +288,7 @@ public class MapUtil {
 
 
     /**
-     * 12、结构性质表添加
+     * 12、结构性质
      *
      * @return
      */
@@ -286,7 +304,7 @@ public class MapUtil {
 
 
     /**
-     * 13、物理性质表添加
+     * 13、物理性质
      *
      * @return
      */
@@ -316,7 +334,7 @@ public class MapUtil {
     }
 
     /**
-     * 14、化学性质表添加
+     * 14、化学性质
      *
      * @return
      */
@@ -337,7 +355,7 @@ public class MapUtil {
 
 
     /**
-     * 15、力学性质表添加
+     * 15、力学性质
      *
      * @return
      */
@@ -355,7 +373,7 @@ public class MapUtil {
     }
 
     /**
-     * 16、导管形态表添加
+     * 16、导管形态
      *
      * @return
      */
@@ -371,7 +389,7 @@ public class MapUtil {
 
 
     /**
-     * 17、维管束形态表添加
+     * 17、维管束形态
      *
      * @return
      */
@@ -385,7 +403,7 @@ public class MapUtil {
     }
 
     /**
-     * 18、组织比量表添加
+     * 18、组织比量
      *
      * @return
      */
@@ -400,7 +418,7 @@ public class MapUtil {
     }
 
     /**
-     * 19、纤维形态表添加
+     * 19、纤维形态
      *
      * @return
      */
@@ -425,7 +443,7 @@ public class MapUtil {
     private static List<Pair> getTGenusList() {
 
         List<Pair> pairs = new ArrayList<>();
-        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("中文名称(*必填)："));
         pairs.add(new Pair().setKey("英文名称："));
         pairs.add(new Pair().setKey("拉丁名称："));
         pairs.add(new Pair().setKey("别名："));
@@ -442,7 +460,7 @@ public class MapUtil {
     private static List<Pair> getTSpecList() {
 
         List<Pair> pairs = new ArrayList<>();
-        pairs.add(new Pair().setKey("中文名称："));
+        pairs.add(new Pair().setKey("中文名称(*必填)："));
         pairs.add(new Pair().setKey("英文名称："));
         pairs.add(new Pair().setKey("拉丁名称："));
         pairs.add(new Pair().setKey("种别名："));
@@ -453,13 +471,166 @@ public class MapUtil {
         pairs.add(new Pair().setKey("国外分布："));
         pairs.add(new Pair().setKey("视频："));
         pairs.add(new Pair().setKey("图片："));
-        pairs.add(new Pair().setKey("排序序号："));
         pairs.add(new Pair().setKey("种描述："));
         return pairs;
     }
 
     /**
-     * 12、结构性质表添加
+     * 22、地下茎
+     *
+     * @return
+     */
+    private static List<Pair> getTUnderStemList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("地下茎类型："));
+        return pairs;
+    }
+
+    /**
+     * 23、竹秆信息
+     *
+     * @return
+     */
+    private static List<Pair> getTCulmList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("竿高度："));
+        pairs.add(new Pair().setKey("竿直径："));
+        pairs.add(new Pair().setKey("竿颜色："));
+        pairs.add(new Pair().setKey("竿稍头："));
+        pairs.add(new Pair().setKey("竿身形态："));
+        pairs.add(new Pair().setKey("节间长度："));
+        pairs.add(new Pair().setKey("节间形状："));
+        pairs.add(new Pair().setKey("节间有无气生根："));
+        pairs.add(new Pair().setKey("节间被毛："));
+        pairs.add(new Pair().setKey("节间竿壁厚："));
+        pairs.add(new Pair().setKey("幼时竿被毛："));
+        pairs.add(new Pair().setKey("幼时竿被粉："));
+        pairs.add(new Pair().setKey("竿环是否隆起："));
+        return pairs;
+    }
+
+    /**
+     * 24、竹叶信息
+     *
+     * @return
+     */
+    private static List<Pair> getTLeafList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("叶片形状："));
+        pairs.add(new Pair().setKey("叶片长度："));
+        pairs.add(new Pair().setKey("叶片宽度："));
+        pairs.add(new Pair().setKey("每小枝具叶片数目："));
+        pairs.add(new Pair().setKey("叶片背面被毛："));
+        pairs.add(new Pair().setKey("叶片边缘锯齿："));
+        pairs.add(new Pair().setKey("叶舌形状："));
+        pairs.add(new Pair().setKey("叶舌高度："));
+        pairs.add(new Pair().setKey("叶柄长度："));
+        pairs.add(new Pair().setKey("叶片基部形状："));
+        pairs.add(new Pair().setKey("叶尖形态："));
+        return pairs;
+    }
+
+    /**
+     * 25、箨环信息
+     *
+     * @return
+     */
+    private static List<Pair> getTSheathNodeList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("箨环是否隆起："));
+        pairs.add(new Pair().setKey("箨环被毛："));
+        return pairs;
+    }
+
+    /**
+     * 26、箨鞘信息
+     *
+     * @return
+     */
+    private static List<Pair> getTSheathList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("箨鞘早落："));
+        pairs.add(new Pair().setKey("箨鞘质地："));
+        pairs.add(new Pair().setKey("箨鞘先端形状："));
+        pairs.add(new Pair().setKey("箨鞘背面被毛被粉："));
+        pairs.add(new Pair().setKey("箨鞘边缘形状："));
+        return pairs;
+    }
+
+    /**
+     * 27、箨耳信息
+     *
+     * @return
+     */
+    private static List<Pair> getTSheathEarList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("箨耳发达情况："));
+        pairs.add(new Pair().setKey("箨耳形状："));
+        pairs.add(new Pair().setKey("箨耳边缘繸毛："));
+        return pairs;
+    }
+
+    /**
+     * 28、箨舌信息
+     *
+     * @return
+     */
+    private static List<Pair> getTSheathTongueList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("箨舌颜色："));
+        pairs.add(new Pair().setKey("箨舌高度："));
+        pairs.add(new Pair().setKey("箨舌边缘形状："));
+        pairs.add(new Pair().setKey("箨舌被毛被粉："));
+        return pairs;
+    }
+
+    /**
+     * 29、箨片信息
+     *
+     * @return
+     */
+    private static List<Pair> getTSheathShellList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("箨片形状："));
+        pairs.add(new Pair().setKey("箨片颜色："));
+        pairs.add(new Pair().setKey("箨片是否易脱落："));
+        pairs.add(new Pair().setKey("箨片先端形："));
+        pairs.add(new Pair().setKey("箨片基部形状："));
+        pairs.add(new Pair().setKey("箨片边缘形态："));
+        pairs.add(new Pair().setKey("箨片背面被毛被粉："));
+        pairs.add(new Pair().setKey("箨片基底与箨鞘宽度之比："));
+        return pairs;
+    }
+
+    /**
+     * 30、花果形态信息
+     *
+     * @return
+     */
+    private static List<Pair> getTFlowerFruitList() {
+
+        List<Pair> pairs = new ArrayList<>();
+        pairs.add(new Pair().setKey("小穗形态："));
+        pairs.add(new Pair().setKey("小穗被毛："));
+        pairs.add(new Pair().setKey("小穗含花朵数："));
+        pairs.add(new Pair().setKey("雄蕊数目："));
+        pairs.add(new Pair().setKey("颖片："));
+        pairs.add(new Pair().setKey("鳞被："));
+        pairs.add(new Pair().setKey("内稃："));
+        pairs.add(new Pair().setKey("外稃："));
+        return pairs;
+    }
+
+    /**
+     * 31、藤结构性质
      *
      * @return
      */
@@ -475,7 +646,7 @@ public class MapUtil {
 
 
     /**
-     * 13、物理性质表添加
+     * 32、物理性质
      *
      * @return
      */
@@ -505,7 +676,7 @@ public class MapUtil {
     }
 
     /**
-     * 14、化学性质表添加
+     * 33、化学性质
      *
      * @return
      */
@@ -526,7 +697,7 @@ public class MapUtil {
 
 
     /**
-     * 15、力学性质表添加
+     * 34、力学性质
      *
      * @return
      */
@@ -544,7 +715,7 @@ public class MapUtil {
     }
 
     /**
-     * 16、导管形态表添加
+     * 35、导管形态
      *
      * @return
      */
@@ -560,7 +731,7 @@ public class MapUtil {
 
 
     /**
-     * 17、维管束形态表添加
+     * 36、维管束形态
      *
      * @return
      */
@@ -574,7 +745,7 @@ public class MapUtil {
     }
 
     /**
-     * 18、组织比量表添加
+     * 37、组织比量
      *
      * @return
      */
@@ -589,7 +760,7 @@ public class MapUtil {
     }
 
     /**
-     * 19、纤维形态表添加
+     * 38、纤维形态
      *
      * @return
      */

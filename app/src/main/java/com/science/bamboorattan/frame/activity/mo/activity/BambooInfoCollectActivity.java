@@ -1,15 +1,24 @@
 package com.science.bamboorattan.frame.activity.mo.activity;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaychan.viewlib.PowerfulEditText;
 import com.orhanobut.logger.Logger;
@@ -24,24 +33,23 @@ import com.science.bamboorattan.frame.activity.ABaseActivity;
 import com.science.bamboorattan.frame.activity.mo.adapter.PairAdapter;
 import com.science.bamboorattan.frame.activity.mo.bean.Pair;
 import com.science.bamboorattan.frame.activity.mo.bean.ResultBean;
-import com.science.bamboorattan.frame.activity.mo.bean.UploadResultBean;
 import com.science.bamboorattan.frame.activity.mo.constant.GlobalConstants;
+import com.science.bamboorattan.frame.activity.mo.util.BDLocationUtils;
 import com.science.bamboorattan.frame.activity.mo.util.MapUtil;
 import com.science.bamboorattan.frame.activity.mo.util.RequestBuildUtil;
 import com.science.bamboorattan.frame.activity.mo.util.Table;
 import com.science.bamboorattan.frame.activity.mo.util.TableUtil;
 import com.science.bamboorattan.listener.OnItemClickListener;
 
-import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  *
  */
-public class BambooInfoCollectActivity extends ABaseActivity {
+public class BambooInfoCollectActivity extends ABaseActivity{
 
 
     private static final int SELECT_REQUEST_CODE = 0X0010;
@@ -65,6 +73,13 @@ public class BambooInfoCollectActivity extends ABaseActivity {
     private int mMediaType;
     private String mImageName;
     private String mVideoName;
+    private TextView mCatalogTime;
+    private TextView mCatalogGps;
+    private boolean flag;
+    private static Context context;
+    private RelativeLayout mTimeGps;
+    private Button mLocationBtn;
+    private TextView mGPSTv;
 
 
     @Override
@@ -90,6 +105,12 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         mCatalogTv = findViewById(R.id.tv_catalog);
         mSubmitBtn = findViewById(R.id.btn_submit);
         mSelectionTv = findViewById(R.id.tv_name);
+        mCatalogTime = findViewById(R.id.time_catalog);
+        mCatalogGps = findViewById(R.id.gps_catalog);
+        mGPSTv = findViewById(R.id.gps_info);
+        mTimeGps = findViewById(R.id.time_gps);
+        mLocationBtn = findViewById(R.id.btn_location);
+
     }
 
     @Override
@@ -99,29 +120,44 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//获取系统时间
+        String date = simpleDateFormat.format(System.currentTimeMillis());
         String tableName = TableUtil.getTableName(mCatalog);
+//        //定位，获得采集地点
+//        BDLocationUtils bdLocationUtils = new BDLocationUtils(BambooInfoCollectActivity.this);
+//        bdLocationUtils.doLocation();//开启定位
+
         mTitleTv.setText(String.format(getResources().getString(R.string.add_table), tableName));
         if (tableName.contains("藤")){
-            if (mCatalog != null) {
+
                 if (mCatalog == Table.TGENUS) {
                     mSelectionRl.setVisibility(View.GONE);
+                    mTimeGps.setVisibility(View.GONE);
                 } else if (mCatalog == Table.TSPEC) {
-                    mCatalogTv.setText("藤属：");
+                    mCatalogTv.setText("藤属(*必选)：");
+                    mCatalogTime.setText("采集时间："+date);
+                    mCatalogGps.setText("采集地点：");
                 } else {
-                    mCatalogTv.setText("藤种：");
+                    mCatalogTv.setText("藤种(*必选)：");
+                    mTimeGps.setVisibility(View.GONE);
                 }
-            }
+
         }else{
-            if (mCatalog != null) {
+
                 if (mCatalog == Table.GENUS) {
                     mSelectionRl.setVisibility(View.GONE);
+                    mTimeGps.setVisibility(View.GONE);
                 } else if (mCatalog == Table.SPEC) {
-                    mCatalogTv.setText("竹属：");
+                    mCatalogTv.setText("竹属(*必选)：");
+                    mCatalogTime.setText("采集时间："+date);
+                    mCatalogGps.setText("采集地点：");
                 } else {
-                    mCatalogTv.setText("竹种：");
+                    mCatalogTv.setText("竹种(*必选)：");
+                    mTimeGps.setVisibility(View.GONE);
                 }
-            }
+
         }
+
         mPairs.clear();
         mPairs.addAll(MapUtil.getList(mCatalog));
         mAdapter = new PairAdapter(this, R.layout.item_pair);
@@ -158,6 +194,18 @@ public class BambooInfoCollectActivity extends ABaseActivity {
 //                }
             }
         });
+
+        mLocationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BDLocationUtils bdLocationUtils = new BDLocationUtils(BambooInfoCollectActivity.this);
+                bdLocationUtils.doLocation();//开启定位
+                bdLocationUtils.mLocationClient.start();//开始定位
+                mGPSTv.setText(GlobalConstants.ADDRESS);
+            }
+        });
+
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(ViewGroup parent, View view, Object o, int position) {
@@ -193,6 +241,10 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         });
     }
 
+    @Override
+    protected void initPermission() {
+
+    }
 
 
     @Override
@@ -227,60 +279,6 @@ public class BambooInfoCollectActivity extends ABaseActivity {
 //        }
 
     }
-
-//    private void handleSubmitResult(String result) {
-//        try {
-//            ResultBean bean = GsonUtils.getInstance().transitionToBean(result, ResultBean.class);
-//            if (bean == null) {
-//                return;
-//            }
-//            if (bean.getCode() == 200) {
-//                ToastUtils.showLongToast(this, bean.getMsg());
-//                finish();
-//            } else {
-//                ToastUtils.showLongToast(this, bean.getMsg());
-//            }
-//        } catch (Exception e) {
-//            ToastUtils.showLongToast(this, e.getMessage());
-//        }
-//    }
-
-//    private void handleUploadVideo(String result) {
-//        try {
-//            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
-//                    UploadResultBean.class);
-//            if (bean == null) {
-//                return;
-//            }
-//            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
-//                ToastUtils.showLongToast(this, "视频文件上传失败");
-//            } else {
-//                mVideoPath = bean.getDisplayUrl();
-//                submitImageFile();
-//            }
-//        } catch (Exception e) {
-//            ToastUtils.showLongToast(this, e.getMessage());
-//        }
-//    }
-
-//    private void handleUploadImage(String result) {
-//        try {
-//            UploadResultBean bean = GsonUtils.getInstance().transitionToBean(result,
-//                    UploadResultBean.class);
-//            if (bean == null) {
-//                return;
-//            }
-//            if (TextUtils.isEmpty(bean.getDisplayUrl())) {
-//                ToastUtils.showLongToast(this, "图片上传失败");
-//            } else {
-//                mImagePath = bean.getDisplayUrl();
-//                submitOrder();
-//            }
-//        } catch (Exception e) {
-//            ToastUtils.showLongToast(this, e.getMessage());
-//        }
-//    }
-
 
     @Override
     public void onFailure(String error, int page, Integer actionType) {
@@ -343,30 +341,13 @@ public class BambooInfoCollectActivity extends ABaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-
-//    private void submitVideoFile() {
-//        if (TextUtils.isEmpty(mVideoPath)) {
-//            ToastUtils.showLongToast(this, "视频文件上传失败");
-//            return;
-//        }
-//        uploadFiles(mVideoPath, 0, mVideoName);
-//    }
-//private void submitImageFile() {
-////        if (TextUtils.isEmpty(mImagePath)) {
-////            ToastUtils.showLongToast(this, "图片上传失败");
-////        } else {
-////            uploadFiles(mImagePath, 1, mImageName);
-////        }
-////    }
-////
-
     private void submitOrder() {
         Map<String, String> params = RequestBuildUtil.getRequestParams(mCatalog, id,
                 mCatalogValue, mPairs);
         if (mCatalog == Table.SPEC||mCatalog == Table.TSPEC) {
-            params.put("specVidio", mVideoPath);
-//            params.put("specVidioName", mVideoName);
-            params.put("specImgs", mImagePath);
+//            params.put("specVidio", mVideoPath);
+////            params.put("specVidioName", mVideoName);
+//            params.put("specImgs", mImagePath);
         }
         String url = RequestBuildUtil.getRequestUrl(mCatalog);
         PresenterFactory.getInstance().createPresenter(this)
@@ -378,30 +359,5 @@ public class BambooInfoCollectActivity extends ABaseActivity {
                         .setActionType(2)
                         .createTask());
     }
-
-
-//    private void uploadFiles(String filePath, int actionType, String fileName) {
-//
-//        File file = new File(filePath);
-//        uploadFile(file, actionType, fileName);
-//    }
-
-
-//    private void uploadFile(File file, int acitonType, String fileName) {
-//        if (file == null) {
-//            Log.e("Upload", "upload file is null");
-//            return;
-//        }
-//        Map<String, String> params = new HashMap<>();
-//        params.put("filename", fileName);
-//        PresenterFactory.getInstance().createPresenter(this).execute(new Task.TaskBuilder()
-//                .setTaskType(TaskType.Method.POST_FILE)
-//                .setUrl(GlobalConstants.IMAGE_ADD)
-//                .setFile(file)
-//                .setParams(params)
-//                .setPage(1)
-//                .setActionType(acitonType)
-//                .createTask());
-//    }
 
 }

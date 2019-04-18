@@ -24,4 +24,9 @@ public class SignInActivity extends ABaseActivity {
     protected void initEvent() {
 
     }
+
+    @Override
+    public void initPermission() {
+
+    }
 }

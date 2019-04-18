@@ -17,7 +17,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 用于写入缓存数据到扩展存储卡 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="com.anyihao.ayb.permission.ACCESS_POLLING_SERVICE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -32,11 +33,13 @@
     <!-- 允许应用在手机屏幕关闭后后台进程仍然运行 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- 允许应用读写系统设置项 -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     <!-- 允许应用震动 -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 允许应用挂载/卸载 外部文件系统 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
 
     <!-- amap required -->
     <!-- 用于进行网络定位 -->
@@ -62,6 +65,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="sfqb96RusjMFXFhvvK0HnSY9gYqnPGIv" />
+
         <meta-data
             android:name="com.science.bamboorattan.common.GlideConfig"
             android:value="GlideConfig" />
@@ -101,10 +109,23 @@
         <meta-data
             android:name="JPUSH_APPKEY"
             android:value="94123a05f5e3adb926020174" /> <!-- 值来自开发者平台取得的AppKey -->
+
+
+
         <activity
             android:name=".frame.activity.mo.activity.MainActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTop" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
 
         <receiver android:name=".common.UBroadcastReceiver" />
 
@@ -122,6 +143,7 @@
         <activity android:name=".frame.activity.mo.activity.OptionActivity" />
         <activity android:name=".frame.activity.mo.activity.RecordActivity" />
         <activity android:name=".frame.activity.mo.activity.DetailActivity" />
+
     </application>
 
 </manifest>

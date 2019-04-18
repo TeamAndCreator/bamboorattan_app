@@ -64,6 +64,11 @@ public class SelectionActivity extends ABaseActivity {
     }
 
     @Override
+    public void initPermission() {
+
+    }
+
+    @Override
     protected void initData() {
         setSupportActionBar(mTooblBar);
         if (getSupportActionBar() != null) {

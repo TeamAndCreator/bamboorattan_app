@@ -505,6 +505,10 @@ public static final ** CREATOR;
 
  -keep class com.linkedin.** { *; }
  -keepattributes Signature
+
+ -keep class com.baidu.** {*;}
+ -keep class mapsdkvi.com.** {*;}
+ -dontwarn com.baidu.**
 #-----end-----
 
 

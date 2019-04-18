@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="竹藤资源信息采集系统"
-        android:textSize="30dp"
+        android:text="竹藤种质资源信息采集系统"
+        android:textSize="28dp"
         android:textStyle="bold" 
         android:textColor="#458B74"/>
 	  <LinearLayout

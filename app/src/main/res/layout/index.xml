@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="竹-信息采集" />
+                android:text="竹属种信息采集" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="藤-信息采集" />
+                android:text="藤属种信息采集" />
         </LinearLayout>
 
 
@@ -82,7 +82,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="竹-形态信息采集" />
+                android:text="竹形态信息采集" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="藤-形态信息采集" />
+                android:text="藤形态信息采集" />
         </LinearLayout>
 
 
@@ -129,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="竹-材性信息采集" />
+                android:text="竹材性信息采集" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,7 +147,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="藤-材性信息采集" />
+                android:text="藤材性信息采集" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

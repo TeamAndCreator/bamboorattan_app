@@ -77,6 +77,8 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
      */
     protected abstract void initEvent();
 
+    protected abstract void initPermission();
+
     protected void init(Bundle savedInstanceState) {
         TAG = getTag();
         setContentView(getContentViewId());
@@ -122,7 +124,10 @@ public abstract class BaseActivity extends AppCompatActivity implements EasyPerm
     protected void onResume() {
         super.onResume();
         MobclickAgent.onResume(this);
+        initPermission();
     }
+
+
 
     @Override
     protected void onPause() {

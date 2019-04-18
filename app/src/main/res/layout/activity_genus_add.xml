@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/app_background"
+    android:orientation="vertical"
     tools:context=".frame.activity.mo.activity.BambooInfoCollectActivity">
 
     <include layout="@layout/toolbar_common" />
@@ -72,6 +72,107 @@
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <View
+                style="@style/divider_line"
+                android:layout_alignParentBottom="true" />
+
+            <RelativeLayout
+                android:id="@+id/time_gps"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/time_catalog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="left|top"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/user_account_color"
+                        android:textSize="@dimen/font_size_fif" />
+
+                    <TextView
+                        android:id="@+id/time_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@id/time_catalog"
+                        android:layout_toRightOf="@id/time_catalog"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/font_size_fif" />
+
+                    <View
+                        style="@style/divider_line"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gps"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/time"
+                    android:layout_gravity="center"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:id="@+id/gps_catalog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="left|top"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="left|center_vertical"
+                        android:textColor="@color/user_account_color"
+                        android:textSize="@dimen/font_size_fif" />
+
+                    <TextView
+                        android:id="@+id/gps_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@id/gps_catalog"
+                        android:layout_toRightOf="@id/gps_catalog"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/font_size_fif" />
+
+                    <View
+                        style="@style/divider_line"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_location"
+                    android:layout_width="97dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="287dp"
+                    android:layout_marginStart="287dp"
+                    android:text="定位" />
+            </RelativeLayout>
+
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btn_submit"

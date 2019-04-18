@@ -65,7 +65,7 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
 
     private void initData() {
         fakeStatusBar.setBackgroundColor(mContext.getResources().getColor(R.color.white));
-        toolbarTitle.setText("主页");
+        toolbarTitle.setText("竹藤种质资源信息采集");
     }
 
     private void initEvent() {
@@ -169,11 +169,11 @@ public class IndexFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("type", 1);
                 startActivity(intent);
                 break;
-//            case R.id.t_collect_form:
-//                intent = new Intent(mContext, OptionActivity.class);
-//                intent.putExtra("type", 2);
-//                startActivity(intent);
-//                break;
+            case R.id.t_collect_form:
+                intent = new Intent(mContext, OptionActivity.class);
+                intent.putExtra("type", 2);
+                startActivity(intent);
+                break;
             case R.id.t_collect_property:
                 intent = new Intent(getActivity(), OptionActivity.class);
                 intent.putExtra("type", 3);

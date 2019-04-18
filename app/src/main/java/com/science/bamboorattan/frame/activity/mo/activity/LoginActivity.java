@@ -47,6 +47,11 @@ public class LoginActivity extends ABaseActivity {
     }
 
     @Override
+    public void initPermission() {
+
+    }
+
+    @Override
     protected void initEvent() {
         login.setOnClickListener(new View.OnClickListener() {
             @Override

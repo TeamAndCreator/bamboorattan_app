@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -12,6 +13,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.science.androidbase.mvp.Task;
 import com.science.androidbase.mvp.TaskType;
+import com.science.androidbase.utils.TextUtils;
 import com.science.bamboorattan.R;
 import com.science.bamboorattan.bean.SpecListBean;
 import com.science.bamboorattan.common.PresenterFactory;
@@ -42,12 +44,13 @@ public class BamRattanFragment extends ABaseFragment {
     private UltimateRecyclerView recyclerView;
     private MoAdapter mAdapter;
     private List<SpecListBean> mData = new ArrayList<>();
+    private SearchView mSearchView;
 
 
     @Override
     protected void initData() {
         fakeStatusBar.setBackgroundColor(mContext.getResources().getColor(R.color.white));
-        toolbarTitle.setText("竹藤库");
+        toolbarTitle.setText("竹藤检索");
         initUltimateRV();
     }
 
@@ -71,6 +74,28 @@ public class BamRattanFragment extends ABaseFragment {
                 return false;
             }
         });
+
+//        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            // 当点击搜索按钮时触发该方法
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+////                mSearchView.setIconified(true);
+//                return false;
+//            }
+//
+//            // 当搜索内容改变时触发该方法
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+////                doSearch(newText);
+//                GlobalConstants.SEARCHTEXT = newText;
+//                for (int i=0;i<mData.size();i++){
+//                    if (mData.get(i).getSpecName()!=GlobalConstants.SEARCHTEXT)
+//                    {}
+//                }
+//                mAdapter.notifyDataSetChanged();
+//                return false;
+//            }
+//        });
     }
 
     @Override
@@ -79,6 +104,7 @@ public class BamRattanFragment extends ABaseFragment {
         toolbar = mRootView.findViewById(R.id.toolbar);
         fakeStatusBar = mRootView.findViewById(R.id.fake_status_bar);
         recyclerView = mRootView.findViewById(R.id.ultimate_recycler_view);
+        mSearchView = mRootView.findViewById(R.id.searchView);
     }
 
     @Override
@@ -140,4 +166,11 @@ public class BamRattanFragment extends ABaseFragment {
         }
         return specListBeans;
     }
+
+//    public void doSearch(String newText){
+//        SpecListBean bean = new SpecListBean();
+//
+//    }
+
+
 }

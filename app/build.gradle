@@ -120,6 +120,9 @@ android {
         // 写入报告的路径，它是可选的（默认为构建目录下的 lint-results.html ）
         htmlOutput file("lint-report.html")
         disable 'TypographyFractions', 'TypographyQuotes'
+
+        checkReleaseBuilds false
+        abortOnError false
     }
 
 
@@ -128,6 +131,7 @@ android {
         main {
             java.srcDirs = ['src/main/java', 'src/main/aidl']
             jni.srcDirs = ['src/main/jni', 'src/main/jni/']
+            jniLibs.srcDirs = ['libs']
         }
     }
 
@@ -221,4 +225,5 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     implementation 'com.alibaba:fastjson:1.2.56'
+    implementation files('libs/BaiduLBS_Android.jar')
 }

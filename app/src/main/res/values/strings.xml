@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">竹藤数据采集</string>
+    <string name="app_name">竹藤种质资源信息采集系统</string>
     <string name="timer_seconds">跳过&#160;%1$ds</string>
     <string name="home">首页</string>
     <string name="device">设备</string>
@@ -187,7 +187,7 @@
     <!--invite friends-->
     <string name="share_to">分享到</string>
     <string name="share_account">您已成功邀请%1$s人</string>
-    <string name="add_table">增加%1$s表</string>
+    <string name="add_table">增加%1$s</string>
     <string name="remind_words">邀请成功即送%1$s积分，上不封顶哦！</string>
 
     <!--my credit-->

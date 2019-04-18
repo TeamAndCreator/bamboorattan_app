@@ -8,6 +8,10 @@ public class GlobalConstants {
     public static final String SP_USER_LOGGED_ON = "sp_user_logged_on";
     public static final String SP_USER_NAME = "sp_user_name";
     public static final String SP_PASSWORD = "sp_password";
+    public static double LONGITUDE = 0; //经度
+    public static double LATITUDE = 0; //纬度
+    public static String  ADDRESS = ""; //地址
+    public static String SEARCHTEXT = null;//检索关键字
 
     /***
      * 接口
@@ -30,6 +34,10 @@ public class GlobalConstants {
 
     public static final String USER_REGISTER = SERVER_IP + "/user/save";
 
+    /**
+     * 竹类图像分类
+     */
+    public static final String IMAGE_CLASSIFICATION = "http://47.104.26.79:7808/test";
     /**
      * 用户信息查询
      */
@@ -182,6 +190,60 @@ public class GlobalConstants {
      * 增加藤种表
      */
     public static final String RATTAN_SPEC_ADD = SERVER_IP + "/rattanSpec/save";
+
+    /**
+     * 3、藤地下茎表添加
+     */
+
+    public static final String T_UNDERS_TEM_ADD = SERVER_IP + "/tUnderstem/save";
+
+    /**
+     * 4、藤秆表添加
+     */
+
+    public static final String T_CULM_ADD = SERVER_IP + "/tCulm/save";
+
+    /**
+     * 5、藤叶表添加
+     */
+
+    public static final String T_LEAF_ADD = SERVER_IP + "/tLeaf/save";
+
+    /**
+     * 6、藤箨环表添加
+     */
+
+    public static final String T_SHEATH_NODE_ADD = SERVER_IP + "/tSheathnode/save";
+
+    /**
+     * 7、藤箨鞘表添加
+     */
+
+    public static final String T_SHEATH_ADD = SERVER_IP + "/tSheath/save";
+
+    /**
+     * 8、藤箨耳表添加
+     */
+
+    public static final String T_SHEATH_EAR_ADD = SERVER_IP + "/tSheathear/save";
+
+    /**
+     * 9、藤箨舌表添加
+     */
+
+    public static final String T_SHEATH_TONGUE_ADD = SERVER_IP + "/tSheathtongue/save";
+
+    /**
+     * 10、藤箨片表添加
+     */
+
+    public static final String T_SHEATH_SHELL_ADD = SERVER_IP + "/tSheathshell/save";
+
+    /**
+     * 11、藤花果形态表添加
+     */
+
+    public static final String T_FLOWER_FRUIT_ADD = SERVER_IP + "/tFlowerfruit/save";
     /**
      * 藤结构性质表添加
      */

@@ -44,16 +44,16 @@ public class OptionActivity extends ABaseActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
         if (mType == 0) {
-            mTitleTv.setText("竹-形态信息采集");
+            mTitleTv.setText("竹形态信息采集");
             mCatalog = Table.UNDERSTEM;
         } else if (mType ==1){
-            mTitleTv.setText("竹-材性信息采集");
+            mTitleTv.setText("竹材性信息采集");
             mCatalog = Table.STRUCTURE;
         } else if (mType == 2) {
-            mTitleTv.setText("藤-形态信息采集");
-            mCatalog = Table.UNDERSTEM;
+            mTitleTv.setText("藤形态信息采集");
+            mCatalog = Table.TUNDERSTEM;
         }else{
-            mTitleTv.setText("藤-材性信息采集");
+            mTitleTv.setText("藤材性信息采集");
             mCatalog = Table.TSTRUCTURE;
         }
         getCatalogList();
@@ -70,53 +70,52 @@ public class OptionActivity extends ABaseActivity {
     private void getCatalogList() {
         mSelection.clear();
         if (mType == 1) {
-            mSelection.add(new CatalogBean().setCatalogName("结构性质表添加").setTable(Table.STRUCTURE));
-            mSelection.add(new CatalogBean().setCatalogName("物理性质表添加").setTable(Table.PHYSICS));
-            mSelection.add(new CatalogBean().setCatalogName("化学性质表添加").setTable(Table.CHEMISTRY));
-            mSelection.add(new CatalogBean().setCatalogName("力学性质表添加").setTable(Table.MECHANICS));
-            mSelection.add(new CatalogBean().setCatalogName("导管形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("结构性质").setTable(Table.STRUCTURE));
+            mSelection.add(new CatalogBean().setCatalogName("物理性质").setTable(Table.PHYSICS));
+            mSelection.add(new CatalogBean().setCatalogName("化学性质").setTable(Table.CHEMISTRY));
+            mSelection.add(new CatalogBean().setCatalogName("力学性质").setTable(Table.MECHANICS));
+            mSelection.add(new CatalogBean().setCatalogName("导管形态").setTable(Table
                     .CATHETERMORPHOLOGY));
-            mSelection.add(new CatalogBean().setCatalogName("维管束形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("维管束形态").setTable(Table
                     .VASCULARBUNDLEMORPHOLOGY));
-            mSelection.add(new CatalogBean().setCatalogName("组织比量表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("组织比量").setTable(Table
                     .TISSUEPROPORTION));
-            mSelection.add(new CatalogBean().setCatalogName("纤维形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("纤维形态").setTable(Table
                     .FIBERMORPHOLOGY));
         } else if (mType == 0){
-            mSelection.add(new CatalogBean().setCatalogName("地下茎表添加").setTable(Table.UNDERSTEM));
-            mSelection.add(new CatalogBean().setCatalogName("竹秆表添加").setTable(Table.CULM));
-            mSelection.add(new CatalogBean().setCatalogName("竹叶表添加").setTable(Table.LEAF));
-            mSelection.add(new CatalogBean().setCatalogName("箨环表添加").setTable(Table.SHEATHNODE));
-            mSelection.add(new CatalogBean().setCatalogName("箨鞘表添加").setTable(Table.SHEATH));
-            mSelection.add(new CatalogBean().setCatalogName("箨耳表添加").setTable(Table.SHEATHEAR));
-            mSelection.add(new CatalogBean().setCatalogName("箨舌表添加").setTable(Table.SHEATHTONGUE));
-            mSelection.add(new CatalogBean().setCatalogName("箨片表添加").setTable(Table.SHEATHSHELL));
-            mSelection.add(new CatalogBean().setCatalogName("花果形态表添加").setTable(Table.FLOWERFRUIT));
+            mSelection.add(new CatalogBean().setCatalogName("地下茎").setTable(Table.UNDERSTEM));
+            mSelection.add(new CatalogBean().setCatalogName("竹秆信息").setTable(Table.CULM));
+            mSelection.add(new CatalogBean().setCatalogName("竹叶信息").setTable(Table.LEAF));
+            mSelection.add(new CatalogBean().setCatalogName("箨环信息").setTable(Table.SHEATHNODE));
+            mSelection.add(new CatalogBean().setCatalogName("箨鞘信息").setTable(Table.SHEATH));
+            mSelection.add(new CatalogBean().setCatalogName("箨耳信息").setTable(Table.SHEATHEAR));
+            mSelection.add(new CatalogBean().setCatalogName("箨舌信息").setTable(Table.SHEATHTONGUE));
+            mSelection.add(new CatalogBean().setCatalogName("箨片信息").setTable(Table.SHEATHSHELL));
+            mSelection.add(new CatalogBean().setCatalogName("花果形态信息").setTable(Table.FLOWERFRUIT));
         }else if (mType == 3) {
-            mSelection.add(new CatalogBean().setCatalogName("结构性质表添加").setTable(Table.TSTRUCTURE));
-            mSelection.add(new CatalogBean().setCatalogName("物理性质表添加").setTable(Table.TPHYSICS));
-            mSelection.add(new CatalogBean().setCatalogName("化学性质表添加").setTable(Table.TCHEMISTRY));
-            mSelection.add(new CatalogBean().setCatalogName("力学性质表添加").setTable(Table.TMECHANICS));
-            mSelection.add(new CatalogBean().setCatalogName("导管形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("藤结构性质").setTable(Table.TSTRUCTURE));
+            mSelection.add(new CatalogBean().setCatalogName("藤物理性质").setTable(Table.TPHYSICS));
+            mSelection.add(new CatalogBean().setCatalogName("藤化学性质").setTable(Table.TCHEMISTRY));
+            mSelection.add(new CatalogBean().setCatalogName("藤力学性质").setTable(Table.TMECHANICS));
+            mSelection.add(new CatalogBean().setCatalogName("藤导管形态").setTable(Table
                     .TCATHETERMORPHOLOGY));
-            mSelection.add(new CatalogBean().setCatalogName("维管束形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("藤维管束形态").setTable(Table
                     .TVASCULARBUNDLEMORPHOLOGY));
-            mSelection.add(new CatalogBean().setCatalogName("组织比量表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("藤组织比量").setTable(Table
                     .TTISSUEPROPORTION));
-            mSelection.add(new CatalogBean().setCatalogName("纤维形态表添加").setTable(Table
+            mSelection.add(new CatalogBean().setCatalogName("藤纤维形态").setTable(Table
                     .TFIBERMORPHOLOGY));
+        }else if (mType ==2){
+            mSelection.add(new CatalogBean().setCatalogName("藤地下茎").setTable(Table.TUNDERSTEM));
+            mSelection.add(new CatalogBean().setCatalogName("藤秆信息").setTable(Table.TCULM));
+            mSelection.add(new CatalogBean().setCatalogName("藤叶信息").setTable(Table.TLEAF));
+            mSelection.add(new CatalogBean().setCatalogName("藤箨环信息").setTable(Table.TSHEATHNODE));
+            mSelection.add(new CatalogBean().setCatalogName("藤箨鞘信息").setTable(Table.TSHEATH));
+            mSelection.add(new CatalogBean().setCatalogName("藤箨耳信息").setTable(Table.TSHEATHEAR));
+            mSelection.add(new CatalogBean().setCatalogName("藤箨舌信息").setTable(Table.TSHEATHTONGUE));
+            mSelection.add(new CatalogBean().setCatalogName("藤箨片信息").setTable(Table.TSHEATHSHELL));
+            mSelection.add(new CatalogBean().setCatalogName("藤花果形态信息").setTable(Table.TFLOWERFRUIT));
         }
-//        else if (mType ==2){
-//            mSelection.add(new CatalogBean().setCatalogName("地下茎表添加").setTable(Table.UNDERSTEM));
-//            mSelection.add(new CatalogBean().setCatalogName("竹秆表添加").setTable(Table.CULM));
-//            mSelection.add(new CatalogBean().setCatalogName("竹叶表添加").setTable(Table.LEAF));
-//            mSelection.add(new CatalogBean().setCatalogName("箨环表添加").setTable(Table.SHEATHNODE));
-//            mSelection.add(new CatalogBean().setCatalogName("箨鞘表添加").setTable(Table.SHEATH));
-//            mSelection.add(new CatalogBean().setCatalogName("箨耳表添加").setTable(Table.SHEATHEAR));
-//            mSelection.add(new CatalogBean().setCatalogName("箨舌表添加").setTable(Table.SHEATHTONGUE));
-//            mSelection.add(new CatalogBean().setCatalogName("箨片表添加").setTable(Table.SHEATHSHELL));
-//            mSelection.add(new CatalogBean().setCatalogName("花果形态表添加").setTable(Table.FLOWERFRUIT));
-//        }
 
     }
 
@@ -175,6 +174,11 @@ public class OptionActivity extends ABaseActivity {
 
     @Override
     public void onSuccess(String result, int page, Integer actionType) {
+
+    }
+
+    @Override
+    public void initPermission() {
 
     }
 

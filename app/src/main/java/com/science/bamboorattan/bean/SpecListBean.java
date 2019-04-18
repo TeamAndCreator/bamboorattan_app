@@ -74,22 +74,11 @@ public class SpecListBean implements Serializable {
     private String specForeign;
     private Object specForeignLike;
     private String specVidio;
-    private Object specVidioName;
-    private Object specVidioLike;
     private String specImgs;
-    private Object specImgsLike;
     private String specDesc;
     private int specSortNum;
-    private Object beginSpecSortNum;
-    private Object endSpecSortNum;
-    private Object genusAll;
-    private Object physicsAll;
-    private Object chemistryAll;
-    private Object mechanicsAll;
-    private Object planeAll;
-    private Object structureAll;
-    private Object boomFormAll;
-    private Object addTime;
+    private String specLocation;
+    private String  addTime;
 
     public String getId() {
         return specId;
@@ -291,36 +280,12 @@ public class SpecListBean implements Serializable {
         this.specVidio = specVidio;
     }
 
-    public Object getSpecVidioName() {
-        return specVidioName;
-    }
-
-    public void setSpecVidioName(Object specVidioName) {
-        this.specVidioName = specVidioName;
-    }
-
-    public Object getSpecVidioLike() {
-        return specVidioLike;
-    }
-
-    public void setSpecVidioLike(Object specVidioLike) {
-        this.specVidioLike = specVidioLike;
-    }
-
     public String getSpecImgs() {
         return specImgs;
     }
 
     public void setSpecImgs(String specImgs) {
         this.specImgs = specImgs;
-    }
-
-    public Object getSpecImgsLike() {
-        return specImgsLike;
-    }
-
-    public void setSpecImgsLike(Object specImgsLike) {
-        this.specImgsLike = specImgsLike;
     }
 
     public String getSpecDesc() {
@@ -339,83 +304,19 @@ public class SpecListBean implements Serializable {
         this.specSortNum = specSortNum;
     }
 
-    public Object getBeginSpecSortNum() {
-        return beginSpecSortNum;
-    }
-
-    public void setBeginSpecSortNum(Object beginSpecSortNum) {
-        this.beginSpecSortNum = beginSpecSortNum;
-    }
-
-    public Object getEndSpecSortNum() {
-        return endSpecSortNum;
-    }
-
-    public void setEndSpecSortNum(Object endSpecSortNum) {
-        this.endSpecSortNum = endSpecSortNum;
-    }
-
-    public Object getGenusAll() {
-        return genusAll;
-    }
-
-    public void setGenusAll(Object genusAll) {
-        this.genusAll = genusAll;
-    }
-
-    public Object getPhysicsAll() {
-        return physicsAll;
-    }
-
-    public void setPhysicsAll(Object physicsAll) {
-        this.physicsAll = physicsAll;
-    }
-
-    public Object getChemistryAll() {
-        return chemistryAll;
-    }
-
-    public void setChemistryAll(Object chemistryAll) {
-        this.chemistryAll = chemistryAll;
-    }
-
-    public Object getMechanicsAll() {
-        return mechanicsAll;
-    }
-
-    public void setMechanicsAll(Object mechanicsAll) {
-        this.mechanicsAll = mechanicsAll;
-    }
-
-    public Object getPlaneAll() {
-        return planeAll;
-    }
-
-    public void setPlaneAll(Object planeAll) {
-        this.planeAll = planeAll;
-    }
-
-    public Object getStructureAll() {
-        return structureAll;
-    }
-
-    public void setStructureAll(Object structureAll) {
-        this.structureAll = structureAll;
-    }
-
-    public Object getBoomFormAll() {
-        return boomFormAll;
-    }
-
-    public void setBoomFormAll(Object boomFormAll) {
-        this.boomFormAll = boomFormAll;
-    }
-
-    public Object getAddTime() {
+    public String  getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Object addTime) {
+    public void setAddTime(String addTime) {
         this.addTime = addTime;
+    }
+
+    public String getSpecLocation() {
+        return specLocation;
+    }
+
+    public void setSpecLocation(String infoLocation) {
+        this.specLocation = infoLocation;
     }
 }

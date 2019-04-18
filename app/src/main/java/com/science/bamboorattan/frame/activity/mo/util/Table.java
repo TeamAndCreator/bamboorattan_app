@@ -24,6 +24,15 @@ public enum Table {
      * 纤维形态
      * 藤属
      * 藤种
+     * 藤地下茎
+     * 藤秆
+     * 藤叶
+     * 藤箨环
+     * 藤箨鞘
+     * 藤箨耳
+     * 藤箨舌
+     * 藤箨片
+     * 藤花果形态
      * 藤结构性质
      * 藤物理性质
      * 藤化学性质
@@ -54,6 +63,15 @@ public enum Table {
     FIBERMORPHOLOGY,
     TGENUS,//藤
     TSPEC,
+    TUNDERSTEM,
+    TCULM,
+    TLEAF,
+    TSHEATHNODE,
+    TSHEATH,
+    TSHEATHEAR,
+    TSHEATHTONGUE,
+    TSHEATHSHELL,
+    TFLOWERFRUIT,
     TSTRUCTURE,
     TPHYSICS,
     TCHEMISTRY,
